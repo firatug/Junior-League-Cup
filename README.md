@@ -2,6 +2,8 @@
 
 7 yaş futbol takımları için turnuva organizasyonu platformu.
 
+**GitHub:** https://github.com/firatug/Junior-League-Cup
+
 ## Çözüm Yapısı
 
 | Proje | Açıklama |
