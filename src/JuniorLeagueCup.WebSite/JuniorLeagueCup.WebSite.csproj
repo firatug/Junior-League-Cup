@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>JuniorLeagueCup.WebSite</RootNamespace>
+    <AssemblyName>JuniorLeagueCup.WebSite</AssemblyName>
+    <Product>Junior League Cup Web Site</Product>
+    <Description>7 yaş futbol takımları ve turnuvaları için resmi web sitesi.</Description>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Junior League Cup — 7 yaş futbol takımları için profesyonel turnuva organizasyonu." />
+    <title>@ViewData["Title"] | Junior League Cup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-ball"></div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a class="brand" asp-controller="Home" asp-action="Index">
+                <span class="brand-icon" aria-hidden="true">⚽</span>
+                <span class="brand-text">
+                    <strong>Junior League</strong>
+                    <small>Cup</small>
+                </span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+                @{
+                    var action = ViewContext.RouteData.Values["action"]?.ToString();
+                }
+                <a asp-action="Index" class="nav-link @(action == "Index" ? "active" : "")">Ana Sayfa</a>
+                <a asp-action="Hakkimizda" class="nav-link @(action == "Hakkimizda" ? "active" : "")">Hakkımızda</a>
+                <a asp-action="Turnuvalar" class="nav-link @(action == "Turnuvalar" ? "active" : "")">Turnuvalar</a>
+                <a asp-action="KatilimGereklilikleri" class="nav-link @(action == "KatilimGereklilikleri" ? "active" : "")">Katılım Gereklilikleri</a>
+                <a asp-action="Iletisim" class="nav-link @(action == "Iletisim" ? "active" : "")">İletişim</a>
+                <a asp-action="Turnuvalar" class="btn btn-primary btn-sm nav-cta">Takım Kaydı</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand-col">
+                    <a class="brand brand-footer" asp-controller="Home" asp-action="Index">
+                        <span class="brand-icon" aria-hidden="true">⚽</span>
+                        <span class="brand-text">
+                            <strong>Junior League</strong>
+                            <small>Cup</small>
+                        </span>
+                    </a>
+                    <p>7 yaş kategorisinde güvenli, adil ve unutulmaz futbol turnuvaları düzenliyoruz. Her çocuk sahada parlasın.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="Facebook">FB</a>
+                        <a href="#" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a asp-action="Hakkimizda">Hakkımızda</a></li>
+                        <li><a asp-action="Turnuvalar">Turnuvalar</a></li>
+                        <li><a asp-action="KatilimGereklilikleri">Katılım Gereklilikleri</a></li>
+                        <li><a asp-action="Iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>İletişim</h4>
+                    <ul class="footer-contact">
+                        <li>📍 İstanbul, Türkiye</li>
+                        <li>📞 +90 (212) 555 07 07</li>
+                        <li>✉️ info@juniorleaguecup.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Bülten</h4>
+                    <p>Turnuva duyurularından haberdar olun.</p>
+                    <form class="newsletter-form" onsubmit="return false;">
+                        <input type="email" placeholder="E-posta adresiniz" aria-label="E-posta" />
+                        <button type="submit" class="btn btn-accent">Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <span>&copy; @DateTime.Now.Year Junior League Cup. Tüm hakları saklıdır.</span>
+                <span>7 Yaş Futbol Turnuvaları</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

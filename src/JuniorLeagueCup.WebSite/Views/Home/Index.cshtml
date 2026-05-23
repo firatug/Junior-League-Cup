@@ -1,0 +1,291 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="container hero-content">
+        <span class="hero-badge">🏆 2026 Sezonu Açıldı</span>
+        <h1>
+            7 YAŞ
+            <span>FUTBOL TURNUVALARI</span>
+        </h1>
+        <p class="hero-desc">
+            Junior League Cup, minik futbolcular için güvenli, profesyonel ve unutulmaz turnuva deneyimi sunar.
+            Takımınızı kurun, sahaya çıkın, şampiyonluğu hedefleyin!
+        </p>
+        <div class="hero-actions">
+            <a asp-action="Turnuvalar" class="btn btn-primary">Turnuvalara Katıl</a>
+            <a asp-action="Hakkimizda" class="btn btn-outline">Bizi Tanıyın</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <strong data-count="64" data-suffix="+">0</strong>
+                <span>Kayıtlı Takım</span>
+            </div>
+            <div class="stat-item">
+                <strong data-count="18">0</strong>
+                <span>Yıllık Turnuva</span>
+            </div>
+            <div class="stat-item">
+                <strong data-count="1400" data-suffix="+">0</strong>
+                <span>Genç Futbolcu</span>
+            </div>
+            <div class="stat-item">
+                <strong data-count="12">0</strong>
+                <span>Şehir</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sponsors">
+    <div class="container">
+        <div class="sponsor-logos">
+            <span>SPOR İSTANBUL</span>
+            <span>TFF YILDIZLAR</span>
+            <span>FAIR PLAY</span>
+            <span>YOUTH SPORTS</span>
+            <span>KIDS FOOTBALL</span>
+        </div>
+    </div>
+</section>
+
+<section id="turnuvalar">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Yaklaşan Etkinlikler</span>
+            <h2>Öne Çıkan Turnuvalar</h2>
+            <p>7 yaş kategorisinde düzenlenen resmi turnuvalarımıza hemen kayıt olun ve minik yıldızlarınızı sahaya taşıyın.</p>
+        </div>
+        <div class="card-grid">
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951f0981?w=800&q=80');">
+                    <span class="card-badge">Kayıt Açık</span>
+                </div>
+                <div class="card-body">
+                    <h3>İstanbul Bahar Kupası</h3>
+                    <div class="meta">
+                        <span>📅 14-16 Haziran 2026</span>
+                        <span>📍 Başakşehir</span>
+                    </div>
+                    <p>16 takımlık eleme usulü turnuva. Her takım minimum 5 maç garantisi ile oynar.</p>
+                    <div class="card-footer">
+                        <span class="price">₺4.500 / takım</span>
+                        <a asp-action="Turnuvalar" class="btn btn-sm btn-primary">Detaylar</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80');">
+                    <span class="card-badge">Son 8 Kontenjan</span>
+                </div>
+                <div class="card-body">
+                    <h3>Ankara Mini Lig</h3>
+                    <div class="meta">
+                        <span>📅 5-7 Temmuz 2026</span>
+                        <span>📍 Eryaman</span>
+                    </div>
+                    <p>Lig usulü 8 haftalık organizasyon. Fair play ödüllü, lisanslı hakem kadrosu.</p>
+                    <div class="card-footer">
+                        <span class="price">₺3.800 / takım</span>
+                        <a asp-action="Turnuvalar" class="btn btn-sm btn-primary">Detaylar</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80');">
+                    <span class="card-badge">Yeni</span>
+                </div>
+                <div class="card-body">
+                    <h3>İzmir Sahil Kupası</h3>
+                    <div class="meta">
+                        <span>📅 22-24 Ağustos 2026</span>
+                        <span>📍 Göztepe</span>
+                    </div>
+                    <p>Sahil şehri atmosferinde 3 gün süren festival havasında futbol şöleni.</p>
+                    <div class="card-footer">
+                        <span class="price">₺4.200 / takım</span>
+                        <a asp-action="Turnuvalar" class="btn btn-sm btn-primary">Detaylar</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="bg-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Neden Biz?</span>
+            <h2>Junior League Cup Farkı</h2>
+            <p>Çocukların güvenliği ve gelişimi her şeyin önünde. Profesyonel organizasyon, sıcak atmosfer.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">🛡️</div>
+                <h3>Güvenli Ortam</h3>
+                <p>Lisanslı antrenörler, sağlık ekibi ve yaş grubuna uygun saha düzenlemeleri ile tam güvenlik.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">⚖️</div>
+                <h3>Adil Müsabaka</h3>
+                <p>TFF onaylı hakemler, eşit maç dağılımı ve şeffaf puan sistemi ile fair play garantisi.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">📸</div>
+                <h3>Profesyonel Medya</h3>
+                <p>Maç fotoğrafları, özet videolar ve dijital rozetler — anılar ömür boyu saklansın.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🏅</div>
+                <h3>Ödül Töreni</h3>
+                <p>Şampiyonluk kupası, gol kralı, fair play ve en centilmen takım ödülleri.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">👨‍👩‍👧</div>
+                <h3>Aile Dostu</h3>
+                <p>Seyirci alanları, ikram köşesi ve çocuk oyun alanları ile keyifli bir gün.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">📋</div>
+                <h3>Kolay Kayıt</h3>
+                <p>Online başvuru, hızlı onay ve 7/24 destek hattı ile zahmetsiz süreç.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Fikstür</span>
+            <h2>Yaklaşan Maçlar</h2>
+            <p>İstanbul Bahar Kupası grup aşamasından öne çıkan karşılaşmalar.</p>
+        </div>
+        <div class="schedule-list">
+            <div class="match-row">
+                <div class="match-time">09:00</div>
+                <div class="match-teams">
+                    <span class="team">Kartal Yıldızları</span>
+                    <span class="match-vs">VS</span>
+                    <span class="team">Beşiktaş Minikler</span>
+                </div>
+                <div class="match-venue">Saha 1 — Başakşehir</div>
+            </div>
+            <div class="match-row">
+                <div class="match-time">10:30</div>
+                <div class="match-teams">
+                    <span class="team">Galatasaray U7</span>
+                    <span class="match-vs">VS</span>
+                    <span class="team">Fenerbahçe Yıldız</span>
+                </div>
+                <div class="match-venue">Saha 2 — Başakşehir</div>
+            </div>
+            <div class="match-row">
+                <div class="match-time">12:00</div>
+                <div class="match-teams">
+                    <span class="team">Trabzon Minikleri</span>
+                    <span class="match-vs">VS</span>
+                    <span class="team">Bursa Spor U7</span>
+                </div>
+                <div class="match-venue">Saha 1 — Başakşehir</div>
+            </div>
+            <div class="match-row">
+                <div class="match-time">14:00</div>
+                <div class="match-teams">
+                    <span class="team">Ankara Şimşekleri</span>
+                    <span class="match-vs">VS</span>
+                    <span class="team">İzmir Deniz Yıldız</span>
+                </div>
+                <div class="match-venue">Saha 3 — Başakşehir</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Nasıl Çalışır?</span>
+            <h2>4 Adımda Turnuvaya Katılın</h2>
+        </div>
+        <div class="steps">
+            <div class="step-item">
+                <h3>Takım Oluşturun</h3>
+                <p>7 yaş doğum yılına uygun en az 8, en fazla 12 oyuncudan oluşan kadronuzu hazırlayın.</p>
+            </div>
+            <div class="step-item">
+                <h3>Başvuru Yapın</h3>
+                <p>Turnuva sayfasından online formu doldurun ve gerekli belgeleri yükleyin.</p>
+            </div>
+            <div class="step-item">
+                <h3>Onay Alın</h3>
+                <p>Ekibimiz 48 saat içinde başvurunuzu değerlendirip size dönüş yapar.</p>
+            </div>
+            <div class="step-item">
+                <h3>Sahaya Çıkın</h3>
+                <p>Fikstür ve forma bilgileriyle turnuva günü profesyonel bir deneyim yaşayın!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Veliler & Antrenörler</span>
+            <h2>Deneyimler</h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Oğlum ilk turnuvasında çok heyecanlıydı. Organizasyon kusursuzdu, hakemler çocuklara sabırlı davrandı. Kesinlikle tekrar katılacağız."</blockquote>
+                <div class="author">
+                    <div class="avatar">AY</div>
+                    <div class="author-info">
+                        <strong>Ayşe Yılmaz</strong>
+                        <span>Veli — Kartal Yıldızları</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"7 yaş grubunda bu kadar profesyonel bir turnuva bulmak zordu. Maç süreleri, saha kalitesi ve ödül töreni harikaydı."</blockquote>
+                <div class="author">
+                    <div class="avatar">MK</div>
+                    <div class="author-info">
+                        <strong>Mehmet Kaya</strong>
+                        <span>Antrenör — Beşiktaş Minikler</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Fair play ödülünü kazanmak çocuklarımız için büyük motivasyon oldu. Junior League Cup ailemizin parçası oldu."</blockquote>
+                <div class="author">
+                    <div class="avatar">SD</div>
+                    <div class="author-info">
+                        <strong>Selin Demir</strong>
+                        <span>Kulüp Başkanı — İzmir Deniz Yıldız</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="cta-banner">
+            <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-content">
+                <h2>TAKIMINIZ SAHAYI BEKLİYOR</h2>
+                <p>2026 sezonu kayıtları devam ediyor. Kontenjanlar sınırlı — yerinizi şimdi ayırtın!</p>
+                <a asp-action="Turnuvalar" class="btn btn-accent">Hemen Kayıt Ol</a>
+                <a asp-action="KatilimGereklilikleri" class="btn btn-outline">Gereklilikleri İncele</a>
+            </div>
+        </div>
+    </div>
+</section>

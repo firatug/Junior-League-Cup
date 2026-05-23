@@ -1,0 +1,129 @@
+@{
+    ViewData["Title"] = "İletişim";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>İLETİŞİM</h1>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / İletişim</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container contact-grid">
+        <div class="contact-info-card">
+            <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 1.5rem;">Bize Ulaşın</h2>
+            <p style="color: var(--gray-300); margin-bottom: 1.5rem;">
+                Turnuva kaydı, sponsorluk, basın ve genel sorularınız için 7/24 destek hattımız ve e-posta adresimiz aktiftir.
+            </p>
+            <div class="contact-item">
+                <div class="icon">📍</div>
+                <div>
+                    <strong>Adres</strong>
+                    <span>Atatürk Mah. Spor Cad. No: 42, Başakşehir / İstanbul</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">📞</div>
+                <div>
+                    <strong>Telefon</strong>
+                    <span>+90 (212) 555 07 07</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">✉️</div>
+                <div>
+                    <strong>E-posta</strong>
+                    <span>info@juniorleaguecup.com</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">💬</div>
+                <div>
+                    <strong>WhatsApp Destek</strong>
+                    <span>+90 (532) 555 07 07 — Hafta içi 09:00-21:00</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">🕐</div>
+                <div>
+                    <strong>Çalışma Saatleri</strong>
+                    <span>Pazartesi – Cumartesi: 09:00 – 20:00</span>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" method="post" asp-action="Iletisim">
+            <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--white); margin-bottom: 1.5rem;">Mesaj Gönderin</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ad">Ad Soyad</label>
+                    <input type="text" id="ad" name="ad" placeholder="Adınız Soyadınız" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="email" name="email" placeholder="ornek@email.com" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telefon">Telefon</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="05XX XXX XX XX" />
+                </div>
+                <div class="form-group">
+                    <label for="konu">Konu</label>
+                    <select id="konu" name="konu">
+                        <option value="kayit">Turnuva Kaydı</option>
+                        <option value="bilgi">Genel Bilgi</option>
+                        <option value="sponsor">Sponsorluk</option>
+                        <option value="basin">Basın</option>
+                        <option value="diger">Diğer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mesaj">Mesajınız</label>
+                <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazın..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent" style="width: 100%;">Gönder</button>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--gray-500);">
+                Form şu an demo modundadır. Canlı sürümde mesajlar veritabanına kaydedilecektir.
+            </p>
+        </form>
+    </div>
+</section>
+
+<section class="content-section bg-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Sık Sorulan Sorular</span>
+            <h2>Merak Edilenler</h2>
+        </div>
+        <div class="req-grid">
+            <div class="req-card">
+                <h3><span>?</span> Kayıt ne zaman kapanır?</h3>
+                <ul>
+                    <li>Her turnuva için kontenjan dolduğunda veya turnuva tarihinden 7 gün önce kayıt kapanır.</li>
+                </ul>
+            </div>
+            <div class="req-card">
+                <h3><span>?</span> Tek maçlık katılım var mı?</h3>
+                <ul>
+                    <li>Hayır, turnuva paketi olarak kayıt alınır. Minimum maç sayısı turnuva formatına göre değişir.</li>
+                </ul>
+            </div>
+            <div class="req-card">
+                <h3><span>?</span> Kız oyuncular katılabilir mi?</h3>
+                <ul>
+                    <li>Evet, 7 yaş kategorisinde karma takımlar kabul edilir. Ayrı kız turnuvası planlarımız 2027'de.</li>
+                </ul>
+            </div>
+            <div class="req-card">
+                <h3><span>?</span> Konaklama desteği var mı?</h3>
+                <ul>
+                    <li>Şehir dışı takımlar için anlaşmalı otel indirimleri sunuyoruz. İletişim formundan talep edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

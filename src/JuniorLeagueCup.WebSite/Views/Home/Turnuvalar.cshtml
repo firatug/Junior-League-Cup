@@ -1,0 +1,156 @@
+@{
+    ViewData["Title"] = "Turnuvalar";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>TURNUVALAR</h1>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Turnuvalar</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">2026 Sezonu</span>
+            <h2>Tüm Turnuvalar</h2>
+            <p>7 yaş (2019 doğumlular) kategorisinde düzenlenen resmi turnuva takvimimiz. Kayıt için kontenjan durumunu kontrol edin.</p>
+        </div>
+        <div class="card-grid">
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951f0981?w=800&q=80');">
+                    <span class="card-badge">Kayıt Açık</span>
+                </div>
+                <div class="card-body">
+                    <h3>İstanbul Bahar Kupası</h3>
+                    <div class="meta">
+                        <span>📅 14-16 Haziran 2026</span>
+                        <span>📍 Başakşehir Fatih Terim Stadyumu Yan Sahalar</span>
+                        <span>👥 16 Takım</span>
+                    </div>
+                    <p>Eleme usulü tek maç. Yarı final ve final dahil minimum 5 maç. 5v5 format, 20+20 dakika.</p>
+                    <div class="card-footer">
+                        <span class="price">₺4.500</span>
+                        <a asp-action="KatilimGereklilikleri" class="btn btn-sm btn-primary">Kayıt Şartları</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80');">
+                    <span class="card-badge">8 Kontenjan Kaldı</span>
+                </div>
+                <div class="card-body">
+                    <h3>Ankara Mini Lig</h3>
+                    <div class="meta">
+                        <span>📅 5 Temmuz - 30 Ağustos 2026</span>
+                        <span>📍 Eryaman Halı Saha Kompleksi</span>
+                        <span>👥 12 Takım</span>
+                    </div>
+                    <p>Hafta sonu maçları. Lig puan durumu, averaj ve direkt final hattı. Şampiyon kupası + madalya.</p>
+                    <div class="card-footer">
+                        <span class="price">₺3.800</span>
+                        <a asp-action="KatilimGereklilikleri" class="btn btn-sm btn-primary">Kayıt Şartları</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80');">
+                    <span class="card-badge">Yeni</span>
+                </div>
+                <div class="card-body">
+                    <h3>İzmir Sahil Kupası</h3>
+                    <div class="meta">
+                        <span>📅 22-24 Ağustos 2026</span>
+                        <span>📍 Göztepe Gürsel Aksel Tesisleri</span>
+                        <span>👥 20 Takım</span>
+                    </div>
+                    <p>4 grup, 2 şerit üst tura çıkış. Açılış seremonisi, kapanış konseri ve plaj etkinliği.</p>
+                    <div class="card-footer">
+                        <span class="price">₺4.200</span>
+                        <a asp-action="KatilimGereklilikleri" class="btn btn-sm btn-primary">Kayıt Şartları</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80');">
+                    <span class="card-badge">Yakında</span>
+                </div>
+                <div class="card-body">
+                    <h3>Bursa Kış Şampiyonası</h3>
+                    <div class="meta">
+                        <span>📅 12-14 Aralık 2026</span>
+                        <span>📍 Bursa Osmangazi Spor Kompleksi</span>
+                        <span>👥 12 Takım</span>
+                    </div>
+                    <p>Kapalı saha turnuvası. Isınma alanları ve sıcak içecek ikramı dahil premium paket.</p>
+                    <div class="card-footer">
+                        <span class="price">₺5.000</span>
+                        <a asp-action="Iletisim" class="btn btn-sm btn-outline">Ön Kayıt</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80');">
+                    <span class="card-badge">Dolu</span>
+                </div>
+                <div class="card-body">
+                    <h3>Antalya Güneş Kupası</h3>
+                    <div class="meta">
+                        <span>📅 3-5 Nisan 2026</span>
+                        <span>📍 Lara Spor Tesisi</span>
+                        <span>👥 16 Takım — DOLU</span>
+                    </div>
+                    <p>Tamamlandı. Şampiyon: Antalya Yıldızları. Gol kralı: Emir K. (7 gol). Fair play: Side Minikler.</p>
+                    <div class="card-footer">
+                        <span class="price">Tamamlandı</span>
+                        <a asp-action="Iletisim" class="btn btn-sm btn-outline">2027 Bekleme Listesi</a>
+                    </div>
+                </div>
+            </article>
+            <article class="tournament-card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80');">
+                    <span class="card-badge">Özel</span>
+                </div>
+                <div class="card-body">
+                    <h3>Kurumsal Özel Turnuva</h3>
+                    <div class="meta">
+                        <span>📅 Sizin Tarihiniz</span>
+                        <span>📍 Türkiye geneli</span>
+                        <span>👥 8-32 Takım</span>
+                    </div>
+                    <p>Okul, şirket veya kulüp özel organizasyonu. Tam paket: hakem, saha, kupa, fotoğraf, yemek.</p>
+                    <div class="card-footer">
+                        <span class="price">Teklif Alın</span>
+                        <a asp-action="Iletisim" class="btn btn-sm btn-accent">Teklif İste</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Format</span>
+            <h2>Standart Turnuva Kuralları</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">📏</div>
+                <h3>Saha & Format</h3>
+                <p>5v5 mini saha, kaleci dahil. Saha boyutu: 30x20m. Top: 3 numara (çocuk topu).</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">⏱️</div>
+                <h3>Maç Süresi</h3>
+                <p>2 devre x 20 dakika, devre arası 5 dakika. Uzatma yok; penaltılar sadece eleme aşamasında.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🔄</div>
+                <h3>Değişiklik</h3>
+                <p>Sınırsız oyuncu değişikliği. Rolling substitution — oyun durmadan değişim yapılabilir.</p>
+            </div>
+        </div>
+    </div>
+</section>
