@@ -1,4 +1,5 @@
-﻿@{
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
+@{
     ViewData["Title"] = "Road to Antalya";
     ViewData["Description"] = "Junior League Cup — Türkiye'nin farklı şehirlerinden 7-8 yaş futbol takımları bölgesel seçmelerle Antalya finaline uzanıyor.";
 }
@@ -283,31 +284,7 @@
             <h2>Road to Antalya İçerikleri</h2>
             <p>Haberler, röportajlar, fotoğraf ve video galerileri — yaşayan bir medya platformu.</p>
         </div>
-        <div class="media-grid">
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80');"></div>
-                <div class="body">
-                    <span class="media-tag">Haber</span>
-                    <h3>Junior League Cup 2026 Sezonu Başlıyor</h3>
-                    <p>Bölgesel seçme takvimi ve Antalya final hazırlıkları duyuruldu.</p>
-                </div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80');"></div>
-                <div class="body">
-                    <span class="media-tag">Video</span>
-                    <h3>Road to Antalya: Yolculuk Başlıyor</h3>
-                    <p>Organizasyon tanıtım videosu ve marka hikâyesi.</p>
-                </div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600&q=80');"></div>
-                <div class="body">
-                    <span class="media-tag">Röportaj</span>
-                    <h3>Kulüpler JLC Deneyimini Anlatıyor</h3>
-                    <p>Profesyonel organizasyon ve görünürlük fırsatları.</p>
-                </div>
-            </article>
+        @await Html.PartialAsync("_NewsGrid", Model)
         </div>
         <div style="text-align:center;margin-top:2rem;">
             <a asp-action="Medya" class="btn btn-outline-dark">Tüm Medya İçerikleri</a>

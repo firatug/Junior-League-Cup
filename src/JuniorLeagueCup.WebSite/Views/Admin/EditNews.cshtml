@@ -1,0 +1,105 @@
+@model JuniorLeagueCup.WebSite.Models.NewsEditViewModel
+@{
+    var isEdit = Model.Id.HasValue;
+    ViewData["Title"] = isEdit ? "Haberi Düzenle" : "Yeni Haber";
+    Layout = "_AdminLayout";
+    var previewImage = NewsImagePaths.Resolve(Model.ImageUrl);
+}
+
+<div class="admin-toolbar">
+    <div>
+        <h1>@(isEdit ? "Haberi Düzenle" : "Yeni Haber")</h1>
+        <p class="admin-subtitle">Başlık, özet, içerik ve görsel bilgilerini girin.</p>
+    </div>
+    <a asp-action="Index" class="btn btn-outline-dark">← Listeye Dön</a>
+</div>
+
+<div class="admin-card">
+    <form asp-action="@(isEdit ? "EditNews" : "CreateNews")" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="ImageUrl" />
+        <div asp-validation-summary="ModelOnly" class="admin-alert admin-alert-error"></div>
+
+        <div class="admin-form-row">
+            <div class="admin-form-group admin-form-grow">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="admin-input" />
+                <span asp-validation-for="Title" class="admin-field-error"></span>
+            </div>
+            <div class="admin-form-group">
+                <label asp-for="Category"></label>
+                <select asp-for="Category" class="admin-input">
+                    @foreach (var cat in NewsEditViewModel.Categories)
+                    {
+                        <option value="@cat">@cat</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="Summary"></label>
+            <textarea asp-for="Summary" class="admin-input" rows="2"></textarea>
+            <span asp-validation-for="Summary" class="admin-field-error"></span>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="Content"></label>
+            <textarea asp-for="Content" class="admin-input" rows="8"></textarea>
+            <span asp-validation-for="Content" class="admin-field-error"></span>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="ImageFile">Görsel yükle</label>
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <div class="admin-image-preview">
+                    <img src="@previewImage" alt="Mevcut görsel" id="current-image-preview" />
+                </div>
+            }
+            else
+            {
+                <div class="admin-image-preview admin-image-preview--empty" id="current-image-preview-wrap" hidden>
+                    <img src="" alt="Önizleme" id="current-image-preview" />
+                </div>
+            }
+            <input asp-for="ImageFile" class="admin-input" type="file" accept="image/jpeg,image/png,image/webp" id="image-file-input" />
+            <p class="admin-hint">JPG, PNG veya WEBP — en fazla 5 MB. Yeni görsel seçerseniz mevcut görselin yerini alır.</p>
+            <span asp-validation-for="ImageFile" class="admin-field-error"></span>
+        </div>
+
+        <div class="admin-form-row">
+            <div class="admin-form-group">
+                <label asp-for="PublishedAt"></label>
+                <input asp-for="PublishedAt" class="admin-input" type="datetime-local" />
+            </div>
+            <div class="admin-form-group admin-checkboxes">
+                <label class="admin-checkbox">
+                    <input asp-for="IsPublished" />
+                    <span>Yayında</span>
+                </label>
+                <label class="admin-checkbox">
+                    <input asp-for="ShowOnHomepage" />
+                    <span>Ana sayfada göster</span>
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">@(isEdit ? "Güncelle" : "Kaydet")</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('image-file-input')?.addEventListener('change', function (e) {
+            const file = e.target.files?.[0];
+            if (!file) return;
+            const preview = document.getElementById('current-image-preview');
+            const wrap = document.getElementById('current-image-preview-wrap');
+            if (!preview) return;
+            preview.src = URL.createObjectURL(file);
+            if (wrap) wrap.hidden = false;
+        });
+    </script>
+}

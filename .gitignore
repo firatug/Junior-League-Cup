@@ -32,5 +32,8 @@ artifacts/
 Thumbs.db
 
 ## App
+appsettings.Development.json
 appsettings.*.local.json
 secrets.json
+wwwroot/uploads/news/*
+!wwwroot/uploads/news/.gitkeep

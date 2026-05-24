@@ -1,18 +1,18 @@
-ï»¿@model ErrorViewModel
+@model ErrorViewModel
 @{
     ViewData["Title"] = "Hata";
 }
 
 <section class="page-hero">
     <div class="container" style="text-align: center;">
-        <h1>BÄ°R HATA OLUÅžTU</h1>
-        <p style="color: var(--gray-300); margin-top: 1rem;">Ä°steÄŸiniz iÅŸlenirken beklenmeyen bir sorun oluÅŸtu.</p>
+        <h1>BÝR HATA OLUÞTU</h1>
+        <p style="color: var(--gray-300); margin-top: 1rem;">Ýsteðiniz iþlenirken beklenmeyen bir sorun oluþtu.</p>
         @if (Model.ShowRequestId)
         {
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray-500);">
-                Ä°stek KimliÄŸi: <code>@Model.RequestId</code>
+                Ýstek Kimliði: <code>@Model.RequestId</code>
             </p>
         }
-        <a asp-action="Index" class="btn btn-primary" style="margin-top: 2rem;">Ana Sayfaya DÃ¶n</a>
+        <a asp-action="Index" class="btn btn-primary" style="margin-top: 2rem;">Ana Sayfaya Dön</a>
     </div>
 </section>

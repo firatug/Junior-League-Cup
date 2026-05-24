@@ -1,49 +1,19 @@
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
 @{
-    ViewData["Title"] = "Medya";
-    ViewData["Description"] = "Junior League Cup medya — haberler, röportajlar, fotoğraf ve video galerileri, Road to Antalya içerikleri.";
+    ViewData["Title"] = "Haberler";
+    ViewData["Description"] = "Junior League Cup haberleri ve duyuruları.";
 }
 
 <section class="page-hero">
     <div class="container">
-        <h1>MEDYA</h1>
-        <p class="lead">Haberler, röportajlar, galeriler ve Road to Antalya içerikleri.</p>
-        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Medya</p>
+        <h1>HABERLER</h1>
+        <p class="lead">Junior League Cup güncel haberleri.</p>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Haberler</p>
     </div>
 </section>
 
 <section class="content-section">
     <div class="container">
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-bottom:2.5rem;">
-            @foreach (var cat in new[] { "Haber", "Video", "Röportaj", "Foto Galeri", "Duyuru", "Sponsor İçeriği" })
-            {
-                <span style="padding:0.4rem 1rem;background:var(--bg-muted);border-radius:100px;font-size:0.8rem;font-weight:600;color:var(--text-muted);">@cat</span>
-            }
-        </div>
-        <div class="media-grid">
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80');"></div>
-                <div class="body"><span class="media-tag">Haber</span><h3>2026 Sezonu Duyurusu</h3><p>Bölgesel seçme takvimi açıklandı.</p></div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80');"></div>
-                <div class="body"><span class="media-tag">Video</span><h3>Road to Antalya Tanıtım</h3><p>Organizasyon tanıtım filmi.</p></div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600&q=80');"></div>
-                <div class="body"><span class="media-tag">Röportaj</span><h3>Oyuncu Hikâyeleri</h3><p>Genç yeteneklerden sözler.</p></div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951f0981?w=600&q=80');"></div>
-                <div class="body"><span class="media-tag">Foto Galeri</span><h3>Antalya Final Atmosferi</h3><p>Organizasyon fotoğrafları.</p></div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1560272564-c83b66b1bd40?w=600&q=80');"></div>
-                <div class="body"><span class="media-tag">Duyuru</span><h3>Partner Kulüp Duyurusu</h3><p>Yeni iş birlikleri.</p></div>
-            </article>
-            <article class="media-card">
-                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&q=80');"></div>
-                <div class="body"><span class="media-tag">Sponsor İçeriği</span><h3>Marka Aktivasyonları</h3><p>Sponsor haberleri.</p></div>
-            </article>
-        </div>
+        @await Html.PartialAsync("_NewsGrid", Model, new ViewDataDictionary(ViewData) { { "ShowCategory", false } })
     </div>
 </section>

@@ -1,3 +1,4 @@
+@model JuniorLeagueCup.WebSite.Models.SponsorlukFormModel
 @{
     ViewData["Title"] = "Sponsorluk";
     ViewData["Description"] = "Junior League Cup sponsorluk fırsatları — ana sponsor, bölgesel sponsor, medya ve forma sponsorluğu.";
@@ -40,22 +41,35 @@
         <div class="section-header">
             <h2>Sponsorluk Dosyası Talep Et</h2>
         </div>
-        @if (ViewBag.FormSuccess == true)
-        {
-            <div class="notice" style="max-width:720px;margin:0 auto 1.5rem;">Talebiniz alındı. Sponsorluk ekibimiz sizinle iletişime geçecektir.</div>
-        }
-        <form class="apply-form" method="post" asp-action="SponsorlukPost" style="max-width:720px;margin:0 auto;">
+        <form class="apply-form" asp-action="SponsorlukPost" method="post" style="max-width:720px;margin:0 auto;">
+            <div asp-validation-summary="All" class="admin-alert admin-alert-error" style="margin-bottom:1rem;"></div>
             <div class="form-row">
-                <div class="form-group"><label for="company">Firma Adı</label><input type="text" id="company" name="company" required /></div>
-                <div class="form-group"><label for="contact">Yetkili Kişi</label><input type="text" id="contact" name="contact" required /></div>
+                <div class="form-group">
+                    <label asp-for="Company"></label>
+                    <input asp-for="Company" />
+                    <span asp-validation-for="Company" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact"></label>
+                    <input asp-for="Contact" />
+                    <span asp-validation-for="Contact" class="admin-field-error"></span>
+                </div>
             </div>
             <div class="form-row">
-                <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" required /></div>
-                <div class="form-group"><label for="email">E-posta</label><input type="email" id="email" name="email" required /></div>
+                <div class="form-group">
+                    <label asp-for="Phone"></label>
+                    <input asp-for="Phone" type="tel" />
+                    <span asp-validation-for="Phone" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" type="email" />
+                    <span asp-validation-for="Email" class="admin-field-error"></span>
+                </div>
             </div>
             <div class="form-group">
-                <label for="sponsorType">İlgilenilen Sponsorluk Türü</label>
-                <select id="sponsorType" name="sponsorType">
+                <label asp-for="SponsorType"></label>
+                <select asp-for="SponsorType">
                     <option>Ana Sponsor</option>
                     <option>Bölgesel Sponsor</option>
                     <option>Forma Sponsoru</option>
@@ -63,8 +77,15 @@
                     <option>Diğer</option>
                 </select>
             </div>
-            <div class="form-group"><label for="message">Mesaj</label><textarea id="message" name="message" rows="4"></textarea></div>
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <textarea asp-for="Message" rows="4"></textarea>
+            </div>
             <button type="submit" class="btn btn-primary">Talep Gönder</button>
         </form>
     </div>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

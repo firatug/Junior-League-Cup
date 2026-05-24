@@ -1,7 +1,7 @@
+@model JuniorLeagueCup.WebSite.Models.IletisimFormModel
 @{
     ViewData["Title"] = "İletişim";
     ViewData["Description"] = "Junior League Cup iletişim — takım başvurusu, sponsorluk, scout iş birliği ve genel bilgi.";
-    var success = ViewBag.FormSuccess as bool? == true;
 }
 
 <section class="page-hero">
@@ -42,20 +42,28 @@
             </p>
         </div>
 
-        @if (success)
-        {
-            <div class="notice" style="grid-column:1/-1;">Mesajınız alındı. En kısa sürede size dönüş yapacağız.</div>
-        }
-
-        <form class="contact-form" method="post" asp-action="IletisimPost">
+        <form class="contact-form" asp-action="IletisimPost" method="post">
+            <div asp-validation-summary="All" class="admin-alert admin-alert-error" style="margin-bottom:1rem;"></div>
             <div class="form-row">
-                <div class="form-group"><label for="fullName">Ad Soyad</label><input type="text" id="fullName" name="fullName" required /></div>
-                <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" required /></div>
+                <div class="form-group">
+                    <label asp-for="FullName"></label>
+                    <input asp-for="FullName" />
+                    <span asp-validation-for="FullName" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone"></label>
+                    <input asp-for="Phone" type="tel" />
+                    <span asp-validation-for="Phone" class="admin-field-error"></span>
+                </div>
             </div>
-            <div class="form-group"><label for="email">E-posta</label><input type="email" id="email" name="email" required /></div>
             <div class="form-group">
-                <label for="subject">Konu</label>
-                <select id="subject" name="subject" required>
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" />
+                <span asp-validation-for="Email" class="admin-field-error"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject"></label>
+                <select asp-for="Subject">
                     <option value="">Seçiniz</option>
                     <option>Takım Başvurusu</option>
                     <option>Sponsorluk</option>
@@ -64,17 +72,28 @@
                     <option>Medya</option>
                     <option>Genel Bilgi</option>
                 </select>
+                <span asp-validation-for="Subject" class="admin-field-error"></span>
             </div>
-            <div class="form-group"><label for="message">Mesaj</label><textarea id="message" name="message" required></textarea></div>
-            <div class="form-check">
-                <input type="checkbox" id="kvkk" name="kvkk" required />
-                <label for="kvkk"><a asp-action="Kvkk" target="_blank">KVKK aydınlatma metnini</a> okudum ve onaylıyorum.</label>
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <textarea asp-for="Message"></textarea>
+                <span asp-validation-for="Message" class="admin-field-error"></span>
             </div>
             <div class="form-check">
-                <input type="checkbox" id="cerez" name="cerez" required />
-                <label for="cerez"><a asp-action="CerezPolitikasi" target="_blank">Çerez politikasını</a> okudum ve kabul ediyorum.</label>
+                <input asp-for="Kvkk" />
+                <label asp-for="Kvkk"><a asp-action="Kvkk" target="_blank">KVKK aydınlatma metnini</a> okudum ve onaylıyorum.</label>
+                <span asp-validation-for="Kvkk" class="admin-field-error"></span>
+            </div>
+            <div class="form-check">
+                <input asp-for="Cerez" />
+                <label asp-for="Cerez"><a asp-action="CerezPolitikasi" target="_blank">Çerez politikasını</a> okudum ve kabul ediyorum.</label>
+                <span asp-validation-for="Cerez" class="admin-field-error"></span>
             </div>
             <button type="submit" class="btn btn-primary">Gönder</button>
         </form>
     </div>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

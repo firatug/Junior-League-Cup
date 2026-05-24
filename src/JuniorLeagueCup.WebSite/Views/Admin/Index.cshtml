@@ -1,0 +1,70 @@
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
+@{
+    ViewData["Title"] = "Haberler";
+    Layout = "_AdminLayout";
+}
+
+<div class="admin-toolbar">
+    <div>
+        <h1>Haber Yönetimi</h1>
+        <p class="admin-subtitle">Ana sayfa ve medya bölümündeki içerikleri buradan yönetin.</p>
+    </div>
+    <a asp-action="CreateNews" class="btn btn-primary">+ Yeni Haber</a>
+</div>
+
+@if (TempData["Success"] is string success)
+{
+    <div class="admin-alert admin-alert-success">@success</div>
+}
+
+<div class="admin-card">
+    @if (!Model.Any())
+    {
+        <p class="admin-empty">Henüz haber yok. İlk haberi ekleyin.</p>
+    }
+    else
+    {
+        <div class="admin-table-wrap">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Kategori</th>
+                        <th>Durum</th>
+                        <th>Ana Sayfa</th>
+                        <th>Tarih</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><strong>@item.Title</strong></td>
+                            <td>@item.Category</td>
+                            <td>
+                                @if (item.IsPublished)
+                                {
+                                    <span class="admin-badge admin-badge-success">Yayında</span>
+                                }
+                                else
+                                {
+                                    <span class="admin-badge">Taslak</span>
+                                }
+                            </td>
+                            <td>@(item.ShowOnHomepage ? "Evet" : "Hayır")</td>
+                            <td>@item.PublishedAt.ToLocalTime().ToString("dd.MM.yyyy")</td>
+                            <td class="admin-actions">
+                                <a asp-action="EditNews" asp-route-id="@item.Id" class="btn btn-outline-dark btn-sm">Düzenle</a>
+                                <form asp-action="DeleteNews" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Bu haberi silmek istediğinize emin misiniz?');">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm admin-btn-danger">Sil</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
