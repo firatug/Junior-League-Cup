@@ -1,0 +1,97 @@
+@model JuniorLeagueCup.WebSite.Models.TakimBasvurusuFormModel
+@{
+    ViewData["Title"] = "Team & Club Application";
+    ViewData["Description"] = "Junior League Cup team application form — pre-registration for regional selections for football schools and clubs.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>TEAM APPLICATION</h1>
+        <p class="lead">Football schools and clubs can complete the application form to pre-register for regional selections.</p>
+        <p class="breadcrumb"><a asp-action="Index">Home</a> / Team Application</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <form class="apply-form" asp-action="TakimBasvurusuPost" method="post">
+            <div asp-validation-summary="All" class="admin-alert admin-alert-error" style="margin-bottom:1rem;"></div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="ClubName">Club / Football School Name</label>
+                    <input asp-for="ClubName" />
+                    <span asp-validation-for="ClubName" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ContactName">Authorized Contact Name</label>
+                    <input asp-for="ContactName" />
+                    <span asp-validation-for="ContactName" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" type="tel" />
+                    <span asp-validation-for="Phone" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="email" />
+                    <span asp-validation-for="Email" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="City">City</label>
+                    <select asp-for="City">
+                        <option value="">Select</option>
+                        <option>İstanbul</option>
+                        <option>Ankara</option>
+                        <option>İzmir</option>
+                        <option>Bursa</option>
+                        <option>Adana</option>
+                        <option>Antalya</option>
+                        <option>Other</option>
+                    </select>
+                    <span asp-validation-for="City" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgeGroup">Team Age Group</label>
+                    <select asp-for="AgeGroup">
+                        <option value="">Select</option>
+                        <option>7 Years</option>
+                        <option>8 Years</option>
+                    </select>
+                    <span asp-validation-for="AgeGroup" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerCount">Number of Players</label>
+                <input asp-for="PlayerCount" min="8" max="20" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PastEvents">Previous Tournaments / Events</label>
+                <textarea asp-for="PastEvents" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes">Notes</label>
+                <textarea asp-for="Notes" rows="3"></textarea>
+            </div>
+            <div class="form-check">
+                <input asp-for="Kvkk" />
+                <label asp-for="Kvkk">I have read the <a asp-action="Kvkk" target="_blank">privacy notice (KVKK)</a> and consent to the processing of my personal data.</label>
+                <span asp-validation-for="Kvkk" class="admin-field-error"></span>
+            </div>
+            <div class="form-check">
+                <input asp-for="Cerez" />
+                <label asp-for="Cerez">I have read and accept the <a asp-action="CerezPolitikasi" target="_blank">cookie policy</a>.</label>
+                <span asp-validation-for="Cerez" class="admin-field-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Submit Application</button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

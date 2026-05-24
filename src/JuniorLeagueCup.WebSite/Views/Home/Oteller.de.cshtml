@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Hotels & Unterkunft";
+    ViewData["Description"] = "Junior League Cup Hotels und Unterkunft in Antalya — Partnerhotels in Kundu, Lara, Side und Belek.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>HOTELS & UNTERKUNFT</h1>
+        <p class="lead">Fußball- und Urlaubserlebnis in Antalya — Unterkunftspakete für Familien und Teams.</p>
+        <p class="breadcrumb"><a asp-action="Index">Startseite</a> / Hotels</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            Das JLC-Finale in Antalya verbindet die Spannung des Fußballs mit der touristischen Stärke Antalyas.
+            Unterkunft, Transfer und Organisationspakete können für Familien und Teams arrangiert werden.
+        </p>
+        <div class="hotel-grid">
+            @foreach (var hotel in new[] {
+                new { Name = "Kremlin Palace", Region = "Kundu", Info = "Partnerhotel — Unterkunft und Transfers." },
+                new { Name = "Limak Lara", Region = "Lara", Info = "Organisations-Partnerhotel." },
+                new { Name = "Fame Lara", Region = "Lara", Info = "Unterkunft für Familien und Teams." },
+                new { Name = "Selectum Noa", Region = "Side", Info = "Partnerhotel — Details folgen." },
+                new { Name = "Hane Otel Group", Region = "Belek", Info = "Partnerschaftsgespräche laufen." },
+                new { Name = "Süral Otel Group", Region = "Antalya Stadtzentrum", Info = "Organisationspartner." },
+                new { Name = "Emirhan Hotels", Region = "Lara", Info = "Unterkunftspaket-Optionen." }
+            })
+            {
+                <div class="hotel-card">
+                    <h3>@hotel.Name</h3>
+                    <p class="region">@hotel.Region</p>
+                    <p>@hotel.Info</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm" style="margin-top:1rem;">Details</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

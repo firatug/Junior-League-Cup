@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Cookie-Richtlinie";
+    ViewData["Description"] = "Cookie-Richtlinie der Junior League Cup — Cookies auf der Website und Verwaltung der Einstellungen.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>COOKIE-RICHTLINIE</h1>
+        <p class="lead">Informationen über auf unserer Website verwendete Cookies und wie Sie Ihre Einstellungen verwalten.</p>
+        <p class="breadcrumb"><a asp-action="Index">Startseite</a> / Cookie-Richtlinie</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container legal-content">
+        <p class="legal-updated">Zuletzt aktualisiert: 23. Mai 2026</p>
+
+        <partial name="_LegalEntityInfo" />
+
+        <h2>1. Was sind Cookies?</h2>
+        <p>
+            Cookies sind kleine Textdateien, die von den von Ihnen besuchten Websites in Ihrem Browser oder auf Ihrem Gerät gespeichert werden.
+            Auf <strong>juniorleaguecup.com</strong> werden Cookies verwendet, um Website-Funktionen bereitzustellen,
+            die Sicherheit zu erhöhen und die Nutzererfahrung zu verbessern.
+        </p>
+
+        <h2>2. Wer Cookies verwendet</h2>
+        <p>
+            Diese Website wird unter der Marke Zenit Event innerhalb der Junior League Cup (JLC)-Organisation betrieben.
+            Zenit ist eine Marke von ATA Ventures. Verantwortlicher für durch Cookies erhobene Daten ist
+            <strong>ATA VENTURES BİLGİSAYAR MEDYA SANAYİ VE TİCARET LİMİTED ŞİRKETİ</strong>.
+            Details zur Verarbeitung personenbezogener Daten finden Sie in unserem <a asp-action="Kvkk">Datenschutzhinweis (KVKK)</a>.
+        </p>
+
+        <h2>3. Verwendete Cookie-Arten</h2>
+
+        <h3>3.1. Unbedingt erforderliche Cookies</h3>
+        <p>
+            Erforderlich für grundlegende Website-Funktionen. Sitzungsverwaltung, Sicherheit und Formularvalidierung
+            basieren auf diesen Cookies. Ohne sie funktioniert die Website möglicherweise nicht ordnungsgemäß.
+        </p>
+
+        <h3>3.2. Funktionale Cookies</h3>
+        <p>
+            Werden verwendet, um Ihre Einstellungen (Sprache, Region usw.) zu speichern und Ihr Erlebnis zu personalisieren.
+        </p>
+
+        <h3>3.3. Leistungs- und Analyse-Cookies</h3>
+        <p>
+            Helfen uns, Besucherzahlen, Seitenaufrufe, Traffic-Quellen und Nutzungsstatistiken anonym oder aggregiert zu analysieren
+            um die Website-Leistung zu verbessern.
+        </p>
+
+        <h3>3.4. Marketing-Cookies (falls zutreffend)</h3>
+        <p>
+            Wenn künftig Werbung Dritter oder Social-Media-Integrationen eingeführt werden,
+            werden zugehörige Cookies nur mit Ihrer ausdrücklichen Einwilligung aktiviert.
+        </p>
+
+        <h2>4. Cookie-Speicherdauer</h2>
+        <p>
+            Sitzungs-Cookies werden beim Schließen des Browsers gelöscht. Permanente Cookies können auf Ihrem Gerät verbleiben
+            für einen festgelegten Zeitraum (in der Regel 1–12 Monate), je nach Art und Zweck.
+        </p>
+
+        <h2>5. Cookie-Einstellungen verwalten</h2>
+        <p>
+            Sie können Cookies über Ihre Browser-Einstellungen löschen oder blockieren. In den meisten Browsern ist die Cookie-Verwaltung verfügbar
+            unter Datenschutz, Sicherheit oder Cookies. Das Deaktivieren unbedingt erforderlicher Cookies kann einige Funktionen beeinträchtigen.
+        </p>
+        <ul>
+            <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies</li>
+            <li><strong>Firefox:</strong> Settings → Privacy & Security</li>
+            <li><strong>Safari:</strong> Preferences → Privacy</li>
+            <li><strong>Edge:</strong> Settings → Cookies and site permissions</li>
+        </ul>
+
+        <h2>6. Cookies Dritter</h2>
+        <p>
+            Wenn externe Inhalte (Video, Karten, Social Media usw.) auf unserer Website eingebettet sind,
+             können die eigenen Cookie-Richtlinien Dritter gelten. Wir empfehlen, die Datenschutzrichtlinien dieser Plattformen separat zu prüfen.
+        </p>
+
+        <h2>7. Kontakt</h2>
+        <p>
+            Bei Fragen zu dieser Cookie-Richtlinie wenden Sie sich an Zenit Event:
+            <a href="tel:+902423240354">+90 242 324 03 54</a> ·
+            <a href="mailto:info@juniorleaguecup.com">info@juniorleaguecup.com</a>
+        </p>
+
+        <div class="legal-related">
+            <h3>Verwandte Dokumente</h3>
+            <p>
+                <a asp-action="Kvkk">Datenschutzhinweis (KVKK)</a> ·
+                <a asp-action="KullanimSartlari">Nutzungsbedingungen</a> ·
+                <a asp-action="Iletisim">Kontakt</a>
+            </p>
+        </div>
+    </div>
+</section>

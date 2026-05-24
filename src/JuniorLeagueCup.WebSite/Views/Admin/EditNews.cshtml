@@ -49,6 +49,66 @@
             <span asp-validation-for="Content" class="admin-field-error"></span>
         </div>
 
+        <div class="admin-form-divider">
+            <h2>English content</h2>
+            <p class="admin-subtitle">Optional — shown when visitors switch to English.</p>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="TitleEn"></label>
+            <input asp-for="TitleEn" class="admin-input" />
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="SummaryEn"></label>
+            <textarea asp-for="SummaryEn" class="admin-input" rows="2"></textarea>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="ContentEn"></label>
+            <textarea asp-for="ContentEn" class="admin-input" rows="8"></textarea>
+        </div>
+
+        <div class="admin-form-divider">
+            <h2>Spanish content</h2>
+            <p class="admin-subtitle">Optional — shown when visitors switch to Spanish.</p>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="TitleEs"></label>
+            <input asp-for="TitleEs" class="admin-input" />
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="SummaryEs"></label>
+            <textarea asp-for="SummaryEs" class="admin-input" rows="2"></textarea>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="ContentEs"></label>
+            <textarea asp-for="ContentEs" class="admin-input" rows="8"></textarea>
+        </div>
+
+        <div class="admin-form-divider">
+            <h2>German content</h2>
+            <p class="admin-subtitle">Optional — shown when visitors switch to German.</p>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="TitleDe"></label>
+            <input asp-for="TitleDe" class="admin-input" />
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="SummaryDe"></label>
+            <textarea asp-for="SummaryDe" class="admin-input" rows="2"></textarea>
+        </div>
+
+        <div class="admin-form-group">
+            <label asp-for="ContentDe"></label>
+            <textarea asp-for="ContentDe" class="admin-input" rows="8"></textarea>
+        </div>
+
         <div class="admin-form-group">
             <label asp-for="ImageFile">Görsel yükle</label>
             @if (!string.IsNullOrEmpty(Model.ImageUrl))

@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "About Us";
+    ViewData["Description"] = "About Junior League Cup — a next-generation youth football organization under Zenit Event and Zenit Tourism.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>ABOUT US</h1>
+        <p class="lead">A next-generation youth football organization developed by Zenit Event.</p>
+        <p class="breadcrumb"><a asp-action="Index">Home</a> / About Us</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1bd40?w=900&q=80');" role="img" aria-label="Football organization"></div>
+        <div class="content-text">
+            <span class="section-label">Zenit Event</span>
+            <h2>A Professional Organization Brand</h2>
+            <p>
+                Junior League Cup is a next-generation youth football organization developed by Zenit Event under the Zenit Tourism umbrella.
+                The project aims to create a sustainable, professional organization model by combining sports events, media, tourism,
+                and youth football development under one roof.
+            </p>
+            <ul class="check-list">
+                <li>Regional selections and Antalya final</li>
+                <li>Scout visibility and media reach</li>
+                <li>Sponsorship and sports tourism integration</li>
+                <li>Brand structure ready for international growth</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="content-section section-muted">
+    <div class="container">
+        <div class="cta-banner">
+            <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-overlay" aria-hidden="true"></div>
+            <div class="cta-content">
+                <h2>ROAD TO ANTALYA</h2>
+                <p>A professional organization journey for Turkey's young football talents.</p>
+                <a asp-action="TakimBasvurusu" class="btn btn-gold">Team Application</a>
+                <a asp-action="Sponsorluk" class="btn btn-outline">Become a Sponsor</a>
+            </div>
+        </div>
+    </div>
+</section>

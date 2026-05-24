@@ -1,0 +1,99 @@
+@model JuniorLeagueCup.WebSite.Models.IletisimFormModel
+@{
+    ViewData["Title"] = "Contacto";
+    ViewData["Description"] = "Contacto Junior League Cup — solicitudes de equipo, patrocinio, asociaciones de scouts y consultas generales.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>CONTACTO</h1>
+        <p class="lead">Escríbenos con tus preguntas y solicitudes de colaboración.</p>
+        <p class="breadcrumb"><a asp-action="Index">Inicio</a> / Contacto</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container contact-grid">
+        <div class="contact-info-card">
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">📍</div>
+                <div>
+                    <strong>Dirección</strong>
+                    <span>Çağlayan Mah. Fener Caddesi No.48 D.1<br />Muratpaşa / Antalya, Turquía</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">📞</div>
+                <div><strong>Teléfono</strong><span><a href="tel:+902423240354">+90 242 324 03 54</a></span></div>
+            </div>
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">✉️</div>
+                <div><strong>Correo electrónico</strong><span><a href="mailto:info@juniorleaguecup.com">info@juniorleaguecup.com</a></span></div>
+            </div>
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">🏢</div>
+                <div>
+                    <strong>Organización</strong>
+                    <span>Zenit Event — Junior League Cup<br />Marca ATA Ventures</span>
+                </div>
+            </div>
+            <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--text-muted);">
+                Para solicitudes de equipo, utiliza el <a asp-action="TakimBasvurusu" style="color:var(--accent);font-weight:600;">formulario de solicitud</a>.
+            </p>
+        </div>
+
+        <form class="contact-form" asp-action="IletisimPost" method="post">
+            <div asp-validation-summary="All" class="admin-alert admin-alert-error" style="margin-bottom:1rem;"></div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="FullName">Nombre completo</label>
+                    <input asp-for="FullName" />
+                    <span asp-validation-for="FullName" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Teléfono</label>
+                    <input asp-for="Phone" type="tel" />
+                    <span asp-validation-for="Phone" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Correo electrónico</label>
+                <input asp-for="Email" type="email" />
+                <span asp-validation-for="Email" class="admin-field-error"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject">Asunto</label>
+                <select asp-for="Subject">
+                    <option value="">Seleccionar</option>
+                    <option>Solicitud de equipo</option>
+                    <option>Patrocinio</option>
+                    <option>Asociación de scouts</option>
+                    <option>Asociación hotelera</option>
+                    <option>Medios</option>
+                    <option>Consulta general</option>
+                </select>
+                <span asp-validation-for="Subject" class="admin-field-error"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message">Mensaje</label>
+                <textarea asp-for="Message"></textarea>
+                <span asp-validation-for="Message" class="admin-field-error"></span>
+            </div>
+            <div class="form-check">
+                <input asp-for="Kvkk" />
+                <label asp-for="Kvkk">He leído y acepto el <a asp-action="Kvkk" target="_blank">aviso de privacidad (KVKK)</a>.</label>
+                <span asp-validation-for="Kvkk" class="admin-field-error"></span>
+            </div>
+            <div class="form-check">
+                <input asp-for="Cerez" />
+                <label asp-for="Cerez">He leído y acepto la <a asp-action="CerezPolitikasi" target="_blank">política de cookies</a>.</label>
+                <span asp-validation-for="Cerez" class="admin-field-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

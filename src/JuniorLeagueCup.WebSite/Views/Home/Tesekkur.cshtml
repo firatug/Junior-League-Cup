@@ -1,6 +1,6 @@
 @{
     var formType = ViewData["FormType"] as string ?? "form";
-    var (title, message) = JuniorLeagueCup.WebSite.Models.FormThankYouTypes.GetContent(formType);
+    var (title, message) = FormThankYouLocalization.GetContent(formType);
     ViewData["Title"] = title;
     ViewData["Description"] = message;
 }

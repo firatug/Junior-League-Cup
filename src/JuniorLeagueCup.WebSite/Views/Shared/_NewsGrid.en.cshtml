@@ -1,0 +1,32 @@
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
+@{
+    var articles = Model?.ToList() ?? [];
+    var showCategory = ViewData["ShowCategory"] as bool? ?? true;
+}
+
+<div class="media-grid">
+    @if (articles.Count == 0)
+    {
+        <p style="grid-column:1/-1;text-align:center;color:var(--text-muted);">No published news articles yet.</p>
+    }
+    else
+    {
+        @foreach (var article in articles)
+        {
+            var image = NewsImagePaths.Resolve(article.ImageUrl);
+            <article class="media-card">
+                <a asp-action="HaberDetay" asp-route-slug="@article.Slug" class="media-card-link">
+                    <div class="thumb" style="background-image:url('@image');"></div>
+                </a>
+                <div class="body">
+                    @if (showCategory)
+                    {
+                        <span class="media-tag">@NewsLocalization.GetCategory(article)</span>
+                    }
+                    <h3><a asp-action="HaberDetay" asp-route-slug="@article.Slug">@NewsLocalization.GetTitle(article)</a></h3>
+                    <p>@NewsLocalization.GetSummary(article)</p>
+                </div>
+            </article>
+        }
+    }
+</div>

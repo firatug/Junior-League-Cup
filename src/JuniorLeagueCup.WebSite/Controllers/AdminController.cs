@@ -110,8 +110,17 @@ public class AdminController(ApplicationDbContext db, NewsImageService imageServ
         var article = new NewsArticle
         {
             Title = model.Title.Trim(),
+            TitleEn = model.TitleEn?.Trim(),
+            TitleEs = model.TitleEs?.Trim(),
+            TitleDe = model.TitleDe?.Trim(),
             Summary = model.Summary.Trim(),
+            SummaryEn = model.SummaryEn?.Trim(),
+            SummaryEs = model.SummaryEs?.Trim(),
+            SummaryDe = model.SummaryDe?.Trim(),
             Content = model.Content.Trim(),
+            ContentEn = model.ContentEn?.Trim(),
+            ContentEs = model.ContentEs?.Trim(),
+            ContentDe = model.ContentDe?.Trim(),
             Category = model.Category,
             ImageUrl = model.ImageUrl?.Trim() ?? string.Empty,
             Slug = slug,
@@ -139,8 +148,17 @@ public class AdminController(ApplicationDbContext db, NewsImageService imageServ
         {
             Id = article.Id,
             Title = article.Title,
+            TitleEn = article.TitleEn,
+            TitleEs = article.TitleEs,
+            TitleDe = article.TitleDe,
             Summary = article.Summary,
+            SummaryEn = article.SummaryEn,
+            SummaryEs = article.SummaryEs,
+            SummaryDe = article.SummaryDe,
             Content = article.Content,
+            ContentEn = article.ContentEn,
+            ContentEs = article.ContentEs,
+            ContentDe = article.ContentDe,
             Category = article.Category,
             ImageUrl = string.IsNullOrEmpty(article.ImageUrl) ? null : article.ImageUrl,
             IsPublished = article.IsPublished,
@@ -182,8 +200,17 @@ public class AdminController(ApplicationDbContext db, NewsImageService imageServ
             return View("EditNews", model);
 
         article.Title = model.Title.Trim();
+        article.TitleEn = model.TitleEn?.Trim();
+        article.TitleEs = model.TitleEs?.Trim();
+        article.TitleDe = model.TitleDe?.Trim();
         article.Summary = model.Summary.Trim();
+        article.SummaryEn = model.SummaryEn?.Trim();
+        article.SummaryEs = model.SummaryEs?.Trim();
+        article.SummaryDe = model.SummaryDe?.Trim();
         article.Content = model.Content.Trim();
+        article.ContentEn = model.ContentEn?.Trim();
+        article.ContentEs = model.ContentEs?.Trim();
+        article.ContentDe = model.ContentDe?.Trim();
         article.Category = model.Category;
         article.ImageUrl = model.ImageUrl?.Trim() ?? string.Empty;
         article.IsPublished = model.IsPublished;

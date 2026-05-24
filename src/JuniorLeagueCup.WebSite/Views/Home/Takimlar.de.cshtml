@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Teams";
+    ViewData["Description"] = "Junior League Cup Teams — Voranmeldung, Regionalmeister und Antalya-Finalisten.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>TEAMS</h1>
+        <p class="lead">Registrierte Teams und Organisationsstatus.</p>
+        <p class="breadcrumb"><a asp-action="Index">Startseite</a> / Teams</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="card-grid">
+            @foreach (var team in new[] {
+                new { Name = "Istanbul Stars", City = "İstanbul", Age = "7-8", Region = "Marmara", Status = "Voranmeldung", Class = "" },
+                new { Name = "Ankara Youth", City = "Ankara", Age = "7-8", Region = "Zentralanatolien", Status = "Voranmeldung", Class = "" },
+                new { Name = "Ägäis Minors", City = "İzmir", Age = "7-8", Region = "Ägäis", Status = "Regionalmeister", Class = "champion" },
+                new { Name = "Mittelmeer-Star", City = "Antalya", Age = "7-8", Region = "Mittelmeer", Status = "Antalya-Finalist", Class = "finalist" },
+                new { Name = "Bursa Sport U8", City = "Bursa", Age = "8", Region = "Marmara", Status = "Voranmeldung", Class = "" },
+                new { Name = "Çukurova Minors", City = "Adana", Age = "7", Region = "Mittelmeer", Status = "Voranmeldung", Class = "" }
+            })
+            {
+                <article class="card team-card">
+                    <div class="card-body">
+                        <div class="team-logo">@team.Name.Substring(0, 1)</div>
+                        <h3>@team.Name</h3>
+                        <div class="card-meta">
+                            <span>@team.City</span>
+                            <span>Alter @team.Age</span>
+                            <span>@team.Region</span>
+                        </div>
+                        <span class="status-badge @team.Class">@team.Status</span>
+                    </div>
+                </article>
+            }
+        </div>
+        <p style="text-align:center;margin-top:2rem;color:var(--text-muted);">Spielerprofil-Funktionen werden in einer zukünftigen Version freigeschaltet.</p>
+    </div>
+</section>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="@UILayoutStrings.HtmlLang">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="@(ViewData["Description"] ?? "Junior League Cup — Türkiye genelinde 7-8 yaş futbol takımları için bölgesel seçmeler ve Antalya final organizasyonu. Road to Antalya.")" />
-    <meta property="og:title" content="@(ViewData["Title"] ?? "Ana Sayfa") | Junior League Cup" />
-    <meta property="og:description" content="@(ViewData["Description"] ?? "Road to Antalya — Geleceğin oyuncuları burada başlar.")" />
+    <meta name="description" content="@(ViewData["Description"] ?? UILayoutStrings.DefaultMetaDescription)" />
+    <meta property="og:title" content="@(ViewData["Title"] ?? UILayoutStrings.DefaultTitle) | Junior League Cup" />
+    <meta property="og:description" content="@(ViewData["Description"] ?? UILayoutStrings.DefaultOgDescription)" />
     <meta property="og:type" content="website" />
-    <title>@(ViewData["Title"] ?? "Ana Sayfa") | Junior League Cup</title>
+    <title>@(ViewData["Title"] ?? UILayoutStrings.DefaultTitle) | Junior League Cup</title>
     <link rel="icon" type="image/png" href="~/images/logo.png" asp-append-version="true" />
     <link rel="apple-touch-icon" href="~/images/logo.png" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -19,27 +19,58 @@
 
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
-            <a class="brand" asp-controller="Home" asp-action="Index" aria-label="Junior League Cup — Ana Sayfa">
+            <a class="brand" asp-controller="Home" asp-action="Index" aria-label="@UILayoutStrings.BrandAria">
                 <partial name="_BrandLogo" />
             </a>
 
-            <button class="nav-toggle" id="navToggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="@UILayoutStrings.MenuToggle" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
 
             <nav class="main-nav" id="mainNav">
                 @{
                     var action = ViewContext.RouteData.Values["action"]?.ToString();
+                    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+                    var currentCulture = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+                    var trUrl = Url.Action("Set", "Culture", new { culture = "tr-TR", returnUrl });
+                    var enUrl = Url.Action("Set", "Culture", new { culture = "en", returnUrl });
+                    var esUrl = Url.Action("Set", "Culture", new { culture = "es", returnUrl });
+                    var deUrl = Url.Action("Set", "Culture", new { culture = "de", returnUrl });
+                    var currentLangLabel = LocaleHelper.CurrentLangLabel;
+                    var jlcMenuActive = action is "JlcNedir" or "Hakkimizda";
                 }
-                <a asp-action="Index" class="nav-link @(action == "Index" ? "active" : "")">Ana Sayfa</a>
-                <a asp-action="JlcNedir" class="nav-link @(action == "JlcNedir" ? "active" : "")">JLC Nedir?</a>
-                <a asp-action="BolgeselSecmeler" class="nav-link @(action == "BolgeselSecmeler" ? "active" : "")">Bölgesel Seçmeler</a>
-                <a asp-action="AntalyaFinali" class="nav-link @(action == "AntalyaFinali" ? "active" : "")">Antalya Finali</a>
-                <a asp-action="Medya" class="nav-link @(action == "Medya" ? "active" : "")">Medya</a>
-                <a asp-action="Hakkimizda" class="nav-link @(action == "Hakkimizda" ? "active" : "")">Hakkımızda</a>
+                <a asp-action="Index" class="nav-link @(action == "Index" ? "active" : "")">@UILayoutStrings.NavHome</a>
+
+                <div class="nav-dropdown" data-nav-dropdown>
+                    <button type="button" class="nav-link nav-dropdown-toggle @(jlcMenuActive ? "active" : "")" aria-expanded="false" aria-haspopup="true">
+                        @UILayoutStrings.NavJlc
+                        <span class="nav-dropdown-chevron" aria-hidden="true"></span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a asp-action="JlcNedir" class="nav-dropdown-item @(action == "JlcNedir" ? "active" : "")">@UILayoutStrings.NavWhatIsJlc</a>
+                        <a asp-action="Hakkimizda" class="nav-dropdown-item @(action == "Hakkimizda" ? "active" : "")">@UILayoutStrings.NavAbout</a>
+                    </div>
+                </div>
+
+                <a asp-action="BolgeselSecmeler" class="nav-link @(action == "BolgeselSecmeler" ? "active" : "")">@UILayoutStrings.NavRegional</a>
+                <a asp-action="AntalyaFinali" class="nav-link @(action == "AntalyaFinali" ? "active" : "")">@UILayoutStrings.NavAntalyaFinal</a>
+                <a asp-action="Medya" class="nav-link @(action == "Medya" ? "active" : "")">@UILayoutStrings.NavMedia</a>
+
                 <div class="nav-actions">
-                    <a asp-action="TakimBasvurusu" class="btn btn-primary btn-sm nav-cta">Takım Başvurusu</a>
-                    <a asp-action="CanliSkor" class="live-link @(action == "CanliSkor" ? "active" : "")" aria-label="Canlı skor ve fikstür">
+                    <div class="nav-dropdown nav-dropdown--lang" data-nav-dropdown>
+                        <button type="button" class="nav-link nav-dropdown-toggle lang-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="@UILayoutStrings.LangSwitchAria">
+                            @currentLangLabel
+                            <span class="nav-dropdown-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="@trUrl" class="nav-dropdown-item @(currentCulture == "tr" ? "active" : "")">@UILayoutStrings.LangTr</a>
+                            <a href="@enUrl" class="nav-dropdown-item @(currentCulture == "en" ? "active" : "")">@UILayoutStrings.LangEn</a>
+                            <a href="@esUrl" class="nav-dropdown-item @(currentCulture == "es" ? "active" : "")">@UILayoutStrings.LangEs</a>
+                            <a href="@deUrl" class="nav-dropdown-item @(currentCulture == "de" ? "active" : "")">@UILayoutStrings.LangDe</a>
+                        </div>
+                    </div>
+                    <a asp-action="TakimBasvurusu" class="btn btn-primary btn-sm nav-cta">@UILayoutStrings.NavTeamApplication</a>
+                    <a asp-action="CanliSkor" class="live-link @(action == "CanliSkor" ? "active" : "")" aria-label="@UILayoutStrings.LiveAria">
                         <span class="live-dot" aria-hidden="true"></span>
                         LIVE
                     </a>
@@ -56,11 +87,11 @@
         <div class="footer-top">
             <div class="container footer-grid">
                 <div class="footer-brand-col">
-                    <a class="brand brand--footer" asp-controller="Home" asp-action="Index" aria-label="Junior League Cup — Ana Sayfa">
+                    <a class="brand brand--footer" asp-controller="Home" asp-action="Index" aria-label="@UILayoutStrings.BrandAria">
                         <partial name="_BrandLogo" view-data="@(new ViewDataDictionary(ViewData) { { "BrandContext", "footer" } })" />
                     </a>
                     <p class="footer-zenit">Zenit Event — Zenit Turizm</p>
-                    <p>Türkiye'nin genç futbol yetenekleri için bölgesel seçmelerden Antalya finaline uzanan profesyonel organizasyon markası.</p>
+                    <p>@UILayoutStrings.FooterTagline</p>
                     <div class="social-links">
                         <a href="#" aria-label="Instagram">IG</a>
                         <a href="#" aria-label="Facebook">FB</a>
@@ -69,42 +100,42 @@
                     </div>
                 </div>
                 <div>
-                    <h4>Organizasyon</h4>
+                    <h4>@UILayoutStrings.FooterOrganization</h4>
                     <ul class="footer-links">
-                        <li><a asp-action="JlcNedir">JLC Nedir?</a></li>
-                        <li><a asp-action="BolgeselSecmeler">Bölgesel Seçmeler</a></li>
-                        <li><a asp-action="AntalyaFinali">Antalya Finali</a></li>
-                        <li><a asp-action="ProgramFikstur">Program / Fikstür</a></li>
-                        <li><a asp-action="Takimlar">Takımlar</a></li>
+                        <li><a asp-action="JlcNedir">@UILayoutStrings.NavWhatIsJlc</a></li>
+                        <li><a asp-action="BolgeselSecmeler">@UILayoutStrings.NavRegional</a></li>
+                        <li><a asp-action="AntalyaFinali">@UILayoutStrings.NavAntalyaFinal</a></li>
+                        <li><a asp-action="ProgramFikstur">@UILayoutStrings.FooterProgram</a></li>
+                        <li><a asp-action="Takimlar">@UILayoutStrings.FooterTeams</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Katılım</h4>
+                    <h4>@UILayoutStrings.FooterParticipation</h4>
                     <ul class="footer-links">
-                        <li><a asp-action="TakimBasvurusu">Takım Başvurusu</a></li>
-                        <li><a asp-action="VeliOyuncuDeneyimi">Veli & Oyuncu Deneyimi</a></li>
-                        <li><a asp-action="ScoutSistemi">Scout Sistemi</a></li>
-                        <li><a asp-action="Sponsorluk">Sponsorluk</a></li>
-                        <li><a asp-action="Oteller">Otel & Konaklama</a></li>
+                        <li><a asp-action="TakimBasvurusu">@UILayoutStrings.NavTeamApplication</a></li>
+                        <li><a asp-action="VeliOyuncuDeneyimi">@UILayoutStrings.FooterParentExperience</a></li>
+                        <li><a asp-action="ScoutSistemi">@UILayoutStrings.FooterScout</a></li>
+                        <li><a asp-action="Sponsorluk">@UILayoutStrings.FooterSponsorship</a></li>
+                        <li><a asp-action="Oteller">@UILayoutStrings.FooterHotels</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>İletişim</h4>
+                    <h4>@UILayoutStrings.FooterContact</h4>
                     <ul class="footer-contact">
-                        <li>Antalya & İstanbul, Türkiye</li>
+                        <li>@UILayoutStrings.FooterLocation</li>
                         <li>info@juniorleaguecup.com</li>
-                        <li><a asp-action="Iletisim">İletişim Formu</a></li>
+                        <li><a asp-action="Iletisim">@UILayoutStrings.FooterContactForm</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container footer-bottom-inner">
-                <span>&copy; @DateTime.Now.Year Junior League Cup — Zenit Event. Tüm hakları saklıdır.</span>
+                <span>@UILayoutStrings.FooterCopyright</span>
                 <div class="footer-legal">
-                    <a asp-action="Kvkk">KVKK</a>
-                    <a asp-action="CerezPolitikasi">Çerez Politikası</a>
-                    <a asp-action="KullanimSartlari">Kullanım Şartları</a>
+                    <a asp-action="Kvkk">@UILayoutStrings.FooterKvkk</a>
+                    <a asp-action="CerezPolitikasi">@UILayoutStrings.FooterCookies</a>
+                    <a asp-action="KullanimSartlari">@UILayoutStrings.FooterTerms</a>
                 </div>
             </div>
         </div>

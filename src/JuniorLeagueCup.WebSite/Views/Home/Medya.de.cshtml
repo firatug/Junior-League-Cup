@@ -1,0 +1,19 @@
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
+@{
+    ViewData["Title"] = "Nachrichten";
+    ViewData["Description"] = "Nachrichten und Ankündigungen der Junior League Cup.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>NACHRICHTEN</h1>
+        <p class="lead">Aktuelle Nachrichten der Junior League Cup.</p>
+        <p class="breadcrumb"><a asp-action="Index">Startseite</a> / Nachrichten</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        @await Html.PartialAsync("_NewsGrid", Model, new ViewDataDictionary(ViewData) { { "ShowCategory", false } })
+    </div>
+</section>

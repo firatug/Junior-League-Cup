@@ -1,0 +1,329 @@
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
+@{
+    ViewData["Title"] = "Camino a Antalya";
+    ViewData["Description"] = "Junior League Cup — equipos de fútbol U7-U8 de ciudades de toda Turquía avanzan desde las selecciones regionales hasta la final en Antalya.";
+}
+
+<section class="hero hero-split">
+    <div class="hero-stadium" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <h1>
+                Junior League Cup
+                <span class="hero-highlight">Camino a Antalya</span>
+                2026
+            </h1>
+            <p class="hero-desc">
+                Jóvenes talentos de 7–8 años de ciudades de toda Turquía avanzan desde las selecciones regionales
+                hasta la final en Antalya. Organización profesional, visibilidad para scouts y una experiencia de turismo deportivo centrada en la familia.
+            </p>
+            <div class="hero-actions">
+                <a asp-action="TakimBasvurusu" class="btn btn-primary">Solicita tu equipo</a>
+                <a asp-action="BolgeselSecmeler" class="btn btn-white">Selecciones regionales</a>
+            </div>
+            <ul class="hero-features">
+                <li>Formato de torneo profesional para edades 7–8</li>
+                <li>Desde selecciones regionales hasta la final en Antalya</li>
+                <li>Visibilidad para scouts y contenido mediático</li>
+            </ul>
+        </div>
+        <p class="hero-watermark" aria-hidden="true">Junior League Cup</p>
+    </div>
+</section>
+
+<div class="hero-cards-wrap">
+    <div class="container">
+        <div class="info-cards">
+            <a class="info-card info-card--1" href="#jlc-nedir">
+                <span class="info-card-num" aria-hidden="true">01</span>
+                <div class="info-card-content">
+                    <strong>Torneo edades 7–8</strong>
+                    <span>Formato profesional, organización adecuada a la edad</span>
+                </div>
+            </a>
+            <a class="info-card info-card--2" href="#nasil-isler">
+                <span class="info-card-num" aria-hidden="true">02</span>
+                <div class="info-card-content">
+                    <strong>Camino a Antalya</strong>
+                    <span>Desde selecciones regionales hasta la gran final</span>
+                </div>
+            </a>
+            <a class="info-card info-card--3" href="#scout">
+                <span class="info-card-num" aria-hidden="true">03</span>
+                <div class="info-card-content">
+                    <strong>Scouts y medios</strong>
+                    <span>Visibilidad y contenido profesional</span>
+                </div>
+            </a>
+            <a class="info-card info-card--4" href="#efsane-bulusma">
+                <span class="info-card-num" aria-hidden="true">04</span>
+                <div class="info-card-content">
+                    <strong>Encuentro con leyendas</strong>
+                    <span>Sesiones de encuentro con futbolistas invitados</span>
+                </div>
+            </a>
+        </div>
+</div>
+</div>
+
+<section id="jlc-nedir">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=900&q=80');" role="img" aria-label="Organización Junior League Cup"></div>
+        <div class="content-text">
+            <span class="section-label">¿Qué es JLC?</span>
+            <h2>Donde comienzan las estrellas del futuro</h2>
+            <p>
+                Junior League Cup es más que un torneo en el que los niños simplemente juegan partidos. Es una organización de fútbol de nueva generación
+                en la que los jóvenes jugadores viven un ambiente profesional, son observados por equipos de scouting, ganan visibilidad mediática
+                y disfrutan de una experiencia inolvidable de turismo deportivo con sus familias.
+            </p>
+            <ul class="check-list">
+                <li>Desarrollo del fútbol juvenil</li>
+                <li>Experiencia de organización profesional</li>
+                <li>Selecciones regionales y final en Antalya</li>
+                <li>Informes de scouts y visibilidad</li>
+                <li>Estructura centrada en familias y clubes</li>
+            </ul>
+            <a asp-action="JlcNedir" class="btn btn-primary" style="margin-top:1.5rem;">Más información</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="nasil-isler">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Organización</span>
+            <h2>Camino a Antalya: el recorrido JLC</h2>
+            <p>El proceso de organización profesional desde las selecciones regionales hasta el campeonato.</p>
+        </div>
+        <div class="timeline" id="jlcTimeline">
+            <div class="timeline-track" aria-hidden="true">
+                <div class="timeline-line"></div>
+                <div class="timeline-line-progress"></div>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">01</div>
+                <h3>Selecciones regionales</h3>
+                <p>Selecciones entre clubes y escuelas de fútbol en İstanbul, Ankara, İzmir, Bursa, Adana y otras ciudades.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">02</div>
+                <h3>Campeones regionales</h3>
+                <p>Los equipos destacados de cada región obtienen el derecho a participar en la final en Antalya.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">03</div>
+                <h3>Final en Antalya</h3>
+                <p>Aproximadamente 40 equipos compiten en un marco de organización profesional de campos y hoteles.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">04</div>
+                <h3>Scouts y medios</h3>
+                <p>Los jugadores ganan visibilidad ante equipos de scouting, medios y marcas patrocinadoras.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">05</div>
+                <h3>Campeón JLC</h3>
+                <p>Se proclama campeón de Junior League Cup tras los partidos finales.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="harita">
+    <div class="container map-section">
+        <div class="content-text">
+            <span class="section-label">Selecciones regionales</span>
+            <h2>Los talentos de Turquía se encuentran en Antalya</h2>
+            <p>
+                Las selecciones regionales son el primer paso del recorrido Junior League Cup. Los equipos destacados de cada región
+                obtienen el derecho a participar en la final en Antalya.
+            </p>
+            <a asp-action="BolgeselSecmeler" class="btn btn-primary" style="margin-top:1.25rem;">Explorar ciudades</a>
+        </div>
+        <div class="map-visual" aria-hidden="true">
+            <partial name="_TurkeyMap" />
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="antalya">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=900&q=80');" role="img" aria-label="Organización final en Antalya"></div>
+        <div class="content-text">
+            <span class="section-label">Final en Antalya</span>
+            <h2>La gran final en Antalya</h2>
+            <p>
+                Antalya es el escenario principal de Junior League Cup. Los equipos que avanzan desde las selecciones regionales compiten
+                en un ambiente de organización futbolística profesional. Partidos, evaluaciones de scouts, producción mediática,
+                ceremonias de premios y actividades familiares se unen en una sola experiencia.
+            </p>
+            <ul class="check-list">
+                <li>Campos profesionales y organización hotelera</li>
+                <li>Partidos de grupos, eliminatorias y final</li>
+                <li>Zona de observación para scouts y entrevistas mediáticas</li>
+                <li>Ceremonia de trofeos y actividades familiares</li>
+            </ul>
+            <a asp-action="AntalyaFinali" class="btn btn-primary" style="margin-top:1.25rem;">Descubre la experiencia de la final</a>
+        </div>
+    </div>
+</section>
+
+<section id="scout">
+    <div class="container content-grid reverse">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=900&q=80');" role="img" aria-label="Evaluación de scouts"></div>
+        <div class="content-text">
+            <span class="section-label">Sistema de scouts</span>
+            <h2>Una plataforma de visibilidad para jóvenes talentos</h2>
+            <p>
+                Junior League Cup busca crear un entorno en el que los jugadores son observados y evaluados.
+                Los equipos de scouting y los profesionales del fútbol tienen la oportunidad de revisar el potencial de desarrollo.
+            </p>
+            <div class="notice">
+                El sistema de scouts no es una promesa de traspaso garantizado; ofrece oportunidades de visibilidad y evaluación.
+            </div>
+            <a href="#efsane-bulusma" class="btn btn-outline-dark" style="margin-right:0.75rem;">Programa Encuentro con leyendas</a>
+            <a asp-action="ScoutSistemi" class="btn btn-primary">Explorar el sistema de scouts</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="efsane-bulusma">
+    <div class="container content-grid">
+        <div class="content-image content-image--legend" style="background-image: url('@Url.Content("~/images/ronaldinho.png")');" role="img" aria-label="Ronaldinho — encuentro con leyendas"></div>
+        <div class="content-text">
+            <span class="section-label">Programa de visibilidad</span>
+            <h2>Encuentro con leyendas</h2>
+            <p>
+                Durante la final en Antalya se realizan breves sesiones de encuentro e intercambio de experiencias con futbolistas invitados
+                según el calendario de la organización. Los jóvenes jugadores encuentran inspiración; clubes y padres pueden participar en el programa.
+            </p>
+            <ul class="check-list">
+                <li>Sesiones de encuentro y motivación</li>
+                <li>Oportunidad de escuchar historias de carrera</li>
+            </ul>
+            <div class="notice">
+                No incluye compromisos de traspaso o de club. Los nombres de invitados y los detalles del programa se anuncian según el calendario.
+            </div>
+            <a asp-action="AntalyaFinali" class="btn btn-primary" style="margin-top:1.25rem;">Final en Antalya</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="veli">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Padres y jugadores</span>
+            <h2>Más que un torneo para tu hijo</h2>
+            <p>Ambiente de campo profesional, contenido mediático y una experiencia de organización centrada en la familia.</p>
+        </div>
+        <div class="package-grid">
+            <div class="package-card">
+                <h3>Experiencia estándar</h3>
+                <p class="package-desc">Participación en la organización y programa básico de partidos.</p>
+                <ul>
+                    <li>Participación en la organización</li>
+                    <li>Programa de partidos y calendario del equipo</li>
+                    <li>Visibilidad mediática básica</li>
+                </ul>
+            </div>
+            <div class="package-card featured">
+                <h3>Jugador premium</h3>
+                <p class="package-desc">Medios y tarjeta de jugador mejorados.</p>
+                <ul>
+                    <li>Sesión fotográfica profesional</li>
+                    <li>Tarjeta personal del jugador</li>
+                    <li>Contenido de vídeo breve</li>
+                    <li>Informe de rendimiento</li>
+                </ul>
+            </div>
+            <div class="package-card">
+                <h3>Elite scout</h3>
+                <p class="package-desc">Perfil detallado y zona de evaluación de scouts.</p>
+                <ul>
+                    <li>Perfil detallado del jugador</li>
+                    <li>Informe de evaluación de scouts</li>
+                    <li>Contenido mediático exclusivo</li>
+                    <li>Área de entrevista / presentación</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-size:0.9rem;">
+            Los detalles y precios de los paquetes se actualizarán desde el panel de administración.
+            <a asp-action="VeliOyuncuDeneyimi" style="color:var(--accent);font-weight:600;"> Ver todos los paquetes →</a>
+        </p>
+    </div>
+</section>
+
+<section id="sponsor">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Patrocinio</span>
+            <h2>Coloca tu marca en la historia del futuro del fútbol</h2>
+            <p>Una potente plataforma de patrocinio que combina fútbol juvenil, experiencia familiar, visibilidad mediática y turismo deportivo.</p>
+        </div>
+        <div class="sponsor-grid">
+            <div class="sponsor-tier"><h3>Patrocinador principal</h3><ul><li>Logotipo y visibilidad web</li><li>Presencia en el evento presencial</li><li>Contenido mediático</li></ul></div>
+            <div class="sponsor-tier"><h3>Patrocinador regional</h3><ul><li>Activación por ciudad</li><li>Redes sociales</li><li>Visibilidad junto al campo</li></ul></div>
+            <div class="sponsor-tier"><h3>Patrocinador de equipación</h3><ul><li>Colocación en equipación del equipo</li><li>Foto y vídeo</li><li>Activación de marca</li></ul></div>
+            <div class="sponsor-tier"><h3>Patrocinador de medios</h3><ul><li>Patrocinio de contenido</li><li>Áreas de entrevista</li><li>Emisión digital</li></ul></div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;">
+            <a asp-action="Sponsorluk" class="btn btn-primary">Solicitar dossier de patrocinio</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="medya">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Noticias</span>
+            <h2>Contenido Camino a Antalya</h2>
+            <p>Noticias, entrevistas, galerías de fotos y vídeos — una plataforma mediática viva.</p>
+        </div>
+        @await Html.PartialAsync("_NewsGrid", Model)
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="Medya" class="btn btn-outline-dark">Todas las noticias y medios</a>
+        </div>
+    </div>
+</section>
+
+<section id="oteller">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Alojamiento</span>
+            <h2>Experiencia de fútbol y vacaciones en Antalya</h2>
+            <p>La final en Antalya de JLC combina la emoción del fútbol con la fortaleza turística de Antalya.</p>
+        </div>
+        <div class="hotel-grid">
+            <div class="hotel-card"><h3>Kremlin Palace</h3><p class="region">Kundu</p><p>Hotel asociado — paquetes de alojamiento y traslados.</p></div>
+            <div class="hotel-card"><h3>Limak Lara</h3><p class="region">Lara</p><p>Hotel asociado de la organización.</p></div>
+            <div class="hotel-card"><h3>Fame Lara</h3><p class="region">Lara</p><p>Opción de alojamiento para familias y equipos.</p></div>
+            
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="Oteller" class="btn btn-outline-dark">Todos los hoteles</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted">
+    <div class="container">
+        <div class="cta-banner">
+            <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-overlay" aria-hidden="true"></div>
+            <div class="cta-content">
+                <h2>DE LOS SUEÑOS LOCALES AL GRAN ESCENARIO</h2>
+                <p>Que tu escuela de fútbol o club se una al recorrido Junior League Cup. Preinscríbete para las selecciones regionales.</p>
+                <a asp-action="TakimBasvurusu" class="btn btn-gold">Solicita tu equipo</a>
+                <a asp-action="Iletisim" class="btn btn-outline">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+</section>

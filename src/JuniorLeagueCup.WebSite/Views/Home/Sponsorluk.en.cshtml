@@ -1,0 +1,92 @@
+@model JuniorLeagueCup.WebSite.Models.SponsorlukFormModel
+@{
+    ViewData["Title"] = "Sponsorship";
+    ViewData["Description"] = "Junior League Cup sponsorship opportunities — title sponsor, regional sponsor, media, and kit sponsorship.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>SPONSORSHIP</h1>
+        <p class="lead">Place your brand in the story of football's future.</p>
+        <p class="breadcrumb"><a asp-action="Index">Home</a> / Sponsorship</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            Junior League Cup is a powerful sponsorship platform that brings together youth football, family experience,
+            media visibility, sports tourism, and social impact.
+        </p>
+        <div class="sponsor-grid">
+            @foreach (var tier in new[] { "Title Sponsor", "Regional Sponsor", "Kit Sponsor", "Pitch Sponsor", "Scout Experience Sponsor", "Media Sponsor", "MVP Award Sponsor", "Family Event Sponsor" })
+            {
+                <div class="sponsor-tier">
+                    <h3>@tier</h3>
+                    <ul>
+                        <li>Logo visibility</li>
+                        <li>Social media visibility</li>
+                        <li>Website visibility</li>
+                        <li>On-site event visibility</li>
+                        <li>News and media content</li>
+                        <li>Custom brand activation</li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="content-section section-muted">
+    <div class="container">
+        <div class="section-header">
+            <h2>Request Sponsorship Deck</h2>
+        </div>
+        <form class="apply-form" asp-action="SponsorlukPost" method="post" style="max-width:720px;margin:0 auto;">
+            <div asp-validation-summary="All" class="admin-alert admin-alert-error" style="margin-bottom:1rem;"></div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Company">Company Name</label>
+                    <input asp-for="Company" />
+                    <span asp-validation-for="Company" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact">Contact Person</label>
+                    <input asp-for="Contact" />
+                    <span asp-validation-for="Contact" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" type="tel" />
+                    <span asp-validation-for="Phone" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="email" />
+                    <span asp-validation-for="Email" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="SponsorType">Sponsorship Type of Interest</label>
+                <select asp-for="SponsorType">
+                    <option>Title Sponsor</option>
+                    <option>Regional Sponsor</option>
+                    <option>Kit Sponsor</option>
+                    <option>Media Sponsor</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message">Message</label>
+                <textarea asp-for="Message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

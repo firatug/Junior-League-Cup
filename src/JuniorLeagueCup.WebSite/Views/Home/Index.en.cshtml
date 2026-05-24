@@ -1,0 +1,329 @@
+@model IEnumerable<JuniorLeagueCup.WebSite.Models.NewsArticle>
+@{
+    ViewData["Title"] = "Road to Antalya";
+    ViewData["Description"] = "Junior League Cup — U7-U8 football teams from cities across Turkey advance from regional selections to the Antalya final.";
+}
+
+<section class="hero hero-split">
+    <div class="hero-stadium" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <h1>
+                Junior League Cup
+                <span class="hero-highlight">Road to Antalya</span>
+                2026
+            </h1>
+            <p class="hero-desc">
+                Young talents aged 7–8 from cities across Turkey advance from regional selections
+                to the Antalya final. Professional organization, scout visibility, and a family-focused sports tourism experience.
+            </p>
+            <div class="hero-actions">
+                <a asp-action="TakimBasvurusu" class="btn btn-primary">Apply for Your Team</a>
+                <a asp-action="BolgeselSecmeler" class="btn btn-white">Regional Selections</a>
+            </div>
+            <ul class="hero-features">
+                <li>Professional tournament format for ages 7–8</li>
+                <li>From regional selections to the Antalya final</li>
+                <li>Scout visibility and media content</li>
+            </ul>
+        </div>
+        <p class="hero-watermark" aria-hidden="true">Junior League Cup</p>
+    </div>
+</section>
+
+<div class="hero-cards-wrap">
+    <div class="container">
+        <div class="info-cards">
+            <a class="info-card info-card--1" href="#jlc-nedir">
+                <span class="info-card-num" aria-hidden="true">01</span>
+                <div class="info-card-content">
+                    <strong>Ages 7–8 Tournament</strong>
+                    <span>Professional format, age-appropriate organization</span>
+                </div>
+            </a>
+            <a class="info-card info-card--2" href="#nasil-isler">
+                <span class="info-card-num" aria-hidden="true">02</span>
+                <div class="info-card-content">
+                    <strong>Road to Antalya</strong>
+                    <span>From regional selections to the grand final</span>
+                </div>
+            </a>
+            <a class="info-card info-card--3" href="#scout">
+                <span class="info-card-num" aria-hidden="true">03</span>
+                <div class="info-card-content">
+                    <strong>Scout & Media</strong>
+                    <span>Visibility and professional content</span>
+                </div>
+            </a>
+            <a class="info-card info-card--4" href="#efsane-bulusma">
+                <span class="info-card-num" aria-hidden="true">04</span>
+                <div class="info-card-content">
+                    <strong>Legend Meet-Up</strong>
+                    <span>Meet-and-greet sessions with guest footballers</span>
+                </div>
+            </a>
+        </div>
+</div>
+</div>
+
+<section id="jlc-nedir">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=900&q=80');" role="img" aria-label="Junior League Cup organization"></div>
+        <div class="content-text">
+            <span class="section-label">What is JLC?</span>
+            <h2>Where Future Stars Begin</h2>
+            <p>
+                Junior League Cup is more than a tournament where children simply play matches. It is a next-generation football organization
+                where young players experience a professional football atmosphere, are observed by scout teams, gain media visibility,
+                and enjoy an unforgettable sports tourism experience with their families.
+            </p>
+            <ul class="check-list">
+                <li>Youth football development</li>
+                <li>Professional organization experience</li>
+                <li>Regional selections and Antalya final</li>
+                <li>Scout reports and visibility</li>
+                <li>Family and club-focused structure</li>
+            </ul>
+            <a asp-action="JlcNedir" class="btn btn-primary" style="margin-top:1.5rem;">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="nasil-isler">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Organization</span>
+            <h2>Road to Antalya: The JLC Journey</h2>
+            <p>The professional organization process from regional selections to the championship.</p>
+        </div>
+        <div class="timeline" id="jlcTimeline">
+            <div class="timeline-track" aria-hidden="true">
+                <div class="timeline-line"></div>
+                <div class="timeline-line-progress"></div>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">01</div>
+                <h3>Regional Selections</h3>
+                <p>Selections among clubs and football schools in Istanbul, Ankara, Izmir, Bursa, Adana, and other cities.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">02</div>
+                <h3>Regional Champions</h3>
+                <p>Successful teams in each region earn the right to participate in the Antalya final.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">03</div>
+                <h3>Antalya Final</h3>
+                <p>Approximately 40 teams compete within a professional pitch and hotel organization framework.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">04</div>
+                <h3>Scout & Media</h3>
+                <p>Players gain visibility in front of scout teams, media, and sponsor brands.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">05</div>
+                <h3>JLC Champion</h3>
+                <p>The Junior League Cup champion is crowned after the final matches.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="harita">
+    <div class="container map-section">
+        <div class="content-text">
+            <span class="section-label">Regional Selections</span>
+            <h2>Turkey's Talents Meet in Antalya</h2>
+            <p>
+                Regional selections are the first step on the Junior League Cup journey. Successful teams in each region
+                earn the right to participate in the Antalya final.
+            </p>
+            <a asp-action="BolgeselSecmeler" class="btn btn-primary" style="margin-top:1.25rem;">Explore Cities</a>
+        </div>
+        <div class="map-visual" aria-hidden="true">
+            <partial name="_TurkeyMap" />
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="antalya">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=900&q=80');" role="img" aria-label="Antalya final organization"></div>
+        <div class="content-text">
+            <span class="section-label">Antalya Final</span>
+            <h2>The Grand Final in Antalya</h2>
+            <p>
+                Antalya is the main stage of Junior League Cup. Teams advancing from regional selections compete
+                in a professional football organization atmosphere. Matches, scout evaluations, media production,
+                award ceremonies, and family activities come together in one experience.
+            </p>
+            <ul class="check-list">
+                <li>Professional pitches and hotel organization</li>
+                <li>Group, knockout, and final matches</li>
+                <li>Scout viewing area and media interviews</li>
+                <li>Trophy ceremony and family activities</li>
+            </ul>
+            <a asp-action="AntalyaFinali" class="btn btn-primary" style="margin-top:1.25rem;">Discover the Final Experience</a>
+        </div>
+    </div>
+</section>
+
+<section id="scout">
+    <div class="container content-grid reverse">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=900&q=80');" role="img" aria-label="Scout evaluation"></div>
+        <div class="content-text">
+            <span class="section-label">Scout System</span>
+            <h2>A Visibility Platform for Young Talents</h2>
+            <p>
+                Junior League Cup aims to create an environment where players are observed and evaluated.
+                Scout teams and football professionals have the opportunity to review development potential.
+            </p>
+            <div class="notice">
+                The scout system is not a guaranteed transfer promise; it offers visibility and evaluation opportunities.
+            </div>
+            <a href="#efsane-bulusma" class="btn btn-outline-dark" style="margin-right:0.75rem;">Legend Meet-Up Program</a>
+            <a asp-action="ScoutSistemi" class="btn btn-primary">Explore the Scout System</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="efsane-bulusma">
+    <div class="container content-grid">
+        <div class="content-image content-image--legend" style="background-image: url('@Url.Content("~/images/ronaldinho.png")');" role="img" aria-label="Ronaldinho — legend meet-up"></div>
+        <div class="content-text">
+            <span class="section-label">Visibility Program</span>
+            <h2>Legend Meet-Up</h2>
+            <p>
+                During the Antalya final, short meet-and-greet and experience-sharing sessions are held with guest footballers
+                according to the organization schedule. Young players find inspiration; clubs and parents can take part in the program.
+            </p>
+            <ul class="check-list">
+                <li>Meet-and-greet and motivation sessions</li>
+                <li>Opportunity to hear career stories</li>
+            </ul>
+            <div class="notice">
+                Does not include transfer or club commitments. Guest names and program details are announced according to the schedule.
+            </div>
+            <a asp-action="AntalyaFinali" class="btn btn-primary" style="margin-top:1.25rem;">Antalya Final</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="veli">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Parent & Player</span>
+            <h2>More Than a Tournament for Your Child</h2>
+            <p>Professional pitch atmosphere, media content, and a family-focused organization experience.</p>
+        </div>
+        <div class="package-grid">
+            <div class="package-card">
+                <h3>Standard Experience</h3>
+                <p class="package-desc">Organization participation and core match program.</p>
+                <ul>
+                    <li>Organization participation</li>
+                    <li>Match program and team fixtures</li>
+                    <li>Basic media visibility</li>
+                </ul>
+            </div>
+            <div class="package-card featured">
+                <h3>Premium Player</h3>
+                <p class="package-desc">Enhanced media and player card experience.</p>
+                <ul>
+                    <li>Professional photo shoot</li>
+                    <li>Personal player card</li>
+                    <li>Short video content</li>
+                    <li>Performance report</li>
+                </ul>
+            </div>
+            <div class="package-card">
+                <h3>Elite Scout</h3>
+                <p class="package-desc">Detailed profile and scout evaluation area.</p>
+                <ul>
+                    <li>Detailed player profile</li>
+                    <li>Scout evaluation report</li>
+                    <li>Exclusive media content</li>
+                    <li>Interview / showcase area</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-size:0.9rem;">
+            Package details and pricing will be updated from the management panel.
+            <a asp-action="VeliOyuncuDeneyimi" style="color:var(--accent);font-weight:600;"> View all packages →</a>
+        </p>
+    </div>
+</section>
+
+<section id="sponsor">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Sponsorship</span>
+            <h2>Place Your Brand in Football's Future Story</h2>
+            <p>A powerful sponsorship platform combining youth football, family experience, media visibility, and sports tourism.</p>
+        </div>
+        <div class="sponsor-grid">
+            <div class="sponsor-tier"><h3>Title Sponsor</h3><ul><li>Logo and web visibility</li><li>On-site event presence</li><li>Media content</li></ul></div>
+            <div class="sponsor-tier"><h3>Regional Sponsor</h3><ul><li>City-based activation</li><li>Social media</li><li>Pitch-side visibility</li></ul></div>
+            <div class="sponsor-tier"><h3>Kit Sponsor</h3><ul><li>Team kit placement</li><li>Photo and video</li><li>Brand activation</li></ul></div>
+            <div class="sponsor-tier"><h3>Media Sponsor</h3><ul><li>Content sponsorship</li><li>Interview areas</li><li>Digital broadcast</li></ul></div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;">
+            <a asp-action="Sponsorluk" class="btn btn-primary">Request Sponsorship Deck</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="medya">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">News</span>
+            <h2>Road to Antalya Content</h2>
+            <p>News, interviews, photo and video galleries — a living media platform.</p>
+        </div>
+        @await Html.PartialAsync("_NewsGrid", Model)
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="Medya" class="btn btn-outline-dark">All News & Media</a>
+        </div>
+    </div>
+</section>
+
+<section id="oteller">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Accommodation</span>
+            <h2>Football and Holiday Experience in Antalya</h2>
+            <p>The JLC Antalya final combines football excitement with Antalya's tourism strength.</p>
+        </div>
+        <div class="hotel-grid">
+            <div class="hotel-card"><h3>Kremlin Palace</h3><p class="region">Kundu</p><p>Partner hotel — accommodation and transfer packages.</p></div>
+            <div class="hotel-card"><h3>Limak Lara</h3><p class="region">Lara</p><p>Organization accommodation partner.</p></div>
+            <div class="hotel-card"><h3>Fame Lara</h3><p class="region">Lara</p><p>Family and team accommodation option.</p></div>
+            
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="Oteller" class="btn btn-outline-dark">All Hotels</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted">
+    <div class="container">
+        <div class="cta-banner">
+            <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-overlay" aria-hidden="true"></div>
+            <div class="cta-content">
+                <h2>FROM LOCAL DREAMS TO THE BIG STAGE</h2>
+                <p>Let your football school or club join the Junior League Cup journey. Pre-register for regional selections.</p>
+                <a asp-action="TakimBasvurusu" class="btn btn-gold">Apply for Your Team</a>
+                <a asp-action="Iletisim" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>

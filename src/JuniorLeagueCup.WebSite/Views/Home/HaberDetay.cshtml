@@ -1,19 +1,19 @@
 @model JuniorLeagueCup.WebSite.Models.NewsArticle
 @{
-    ViewData["Title"] = Model.Title;
-    ViewData["Description"] = Model.Summary;
+    ViewData["Title"] = NewsLocalization.GetTitle(Model);
+    ViewData["Description"] = NewsLocalization.GetSummary(Model);
     var image = NewsImagePaths.Resolve(Model.ImageUrl);
 }
 
 <section class="page-hero">
     <div class="container">
-        <span class="media-tag" style="display:inline-block;margin-bottom:0.75rem;">@Model.Category</span>
-        <h1>@Model.Title</h1>
-        <p class="lead">@Model.Summary</p>
+        <span class="media-tag" style="display:inline-block;margin-bottom:0.75rem;">@NewsLocalization.GetCategory(Model)</span>
+        <h1>@NewsLocalization.GetTitle(Model)</h1>
+        <p class="lead">@NewsLocalization.GetSummary(Model)</p>
         <p class="breadcrumb">
             <a asp-action="Index">Ana Sayfa</a> /
             <a asp-action="Medya">Medya</a> /
-            @Model.Title
+            @NewsLocalization.GetTitle(Model)
         </p>
         <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.9rem;">
             @Model.PublishedAt.ToLocalTime().ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("tr-TR"))
@@ -25,7 +25,7 @@
     <div class="container" style="max-width:800px;">
         <div style="height:320px;border-radius:var(--radius-lg);background-size:cover;background-position:center;margin-bottom:2rem;background-image:url('@image');"></div>
         <div class="legal-content" style="line-height:1.8;color:var(--text);">
-            @foreach (var paragraph in Model.Content.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+            @foreach (var paragraph in NewsLocalization.GetContent(Model).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
             {
                 <p style="margin-bottom:1.25rem;">@paragraph</p>
             }

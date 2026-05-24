@@ -1,0 +1,92 @@
+@model JuniorLeagueCup.WebSite.Models.SponsorlukFormModel
+@{
+    ViewData["Title"] = "Patrocinio";
+    ViewData["Description"] = "Oportunidades de patrocinio Junior League Cup — patrocinador principal, patrocinador regional, medios y equipación.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>PATROCINIO</h1>
+        <p class="lead">Coloca tu marca en la historia del futuro del fútbol.</p>
+        <p class="breadcrumb"><a asp-action="Index">Inicio</a> / Patrocinio</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            Junior League Cup es una potente plataforma de patrocinio que reúne fútbol juvenil, experiencia familiar,
+            visibilidad mediática, turismo deportivo e impacto social.
+        </p>
+        <div class="sponsor-grid">
+            @foreach (var tier in new[] { "Patrocinador principal", "Patrocinador regional", "Patrocinador de equipación", "Patrocinador de campo", "Patrocinador de experiencia scout", "Patrocinador de medios", "Patrocinador del premio MVP", "Patrocinador de eventos familiares" })
+            {
+                <div class="sponsor-tier">
+                    <h3>@tier</h3>
+                    <ul>
+                        <li>Visibilidad del logotipo</li>
+                        <li>Visibilidad en redes sociales</li>
+                        <li>Visibilidad en el sitio web</li>
+                        <li>Visibilidad en el evento presencial</li>
+                        <li>Noticias y contenido mediático</li>
+                        <li>Activación de marca personalizada</li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="content-section section-muted">
+    <div class="container">
+        <div class="section-header">
+            <h2>Solicitar dossier de patrocinio</h2>
+        </div>
+        <form class="apply-form" asp-action="SponsorlukPost" method="post" style="max-width:720px;margin:0 auto;">
+            <div asp-validation-summary="All" class="admin-alert admin-alert-error" style="margin-bottom:1rem;"></div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Company">Nombre de la empresa</label>
+                    <input asp-for="Company" />
+                    <span asp-validation-for="Company" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact">Persona de contacto</label>
+                    <input asp-for="Contact" />
+                    <span asp-validation-for="Contact" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Phone">Teléfono</label>
+                    <input asp-for="Phone" type="tel" />
+                    <span asp-validation-for="Phone" class="admin-field-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Correo electrónico</label>
+                    <input asp-for="Email" type="email" />
+                    <span asp-validation-for="Email" class="admin-field-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="SponsorType">Tipo de patrocinio de interés</label>
+                <select asp-for="SponsorType">
+                    <option>Patrocinador principal</option>
+                    <option>Patrocinador regional</option>
+                    <option>Patrocinador de equipación</option>
+                    <option>Patrocinador de medios</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message">Mensaje</label>
+                <textarea asp-for="Message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

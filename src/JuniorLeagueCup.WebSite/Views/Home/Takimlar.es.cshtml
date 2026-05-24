@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Equipos";
+    ViewData["Description"] = "Equipos Junior League Cup — preinscripción, campeones regionales y finalistas en Antalya.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>EQUIPOS</h1>
+        <p class="lead">Equipos registrados y estado de la organización.</p>
+        <p class="breadcrumb"><a asp-action="Index">Inicio</a> / Equipos</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="card-grid">
+            @foreach (var team in new[] {
+                new { Name = "Estrellas de Estambul", City = "İstanbul", Age = "7-8", Region = "Mármara", Status = "Preinscripción", Class = "" },
+                new { Name = "Juventud de Ankara", City = "Ankara", Age = "7-8", Region = "Anatolia Central", Status = "Preinscripción", Class = "" },
+                new { Name = "Menores del Egeo", City = "İzmir", Age = "7-8", Region = "Egeo", Status = "Campeón regional", Class = "champion" },
+                new { Name = "Estrella Mediterránea", City = "Antalya", Age = "7-8", Region = "Mediterráneo", Status = "Finalista en Antalya", Class = "finalist" },
+                new { Name = "Bursa Sport U8", City = "Bursa", Age = "8", Region = "Mármara", Status = "Preinscripción", Class = "" },
+                new { Name = "Menores de Çukurova", City = "Adana", Age = "7", Region = "Mediterráneo", Status = "Preinscripción", Class = "" }
+            })
+            {
+                <article class="card team-card">
+                    <div class="card-body">
+                        <div class="team-logo">@team.Name.Substring(0, 1)</div>
+                        <h3>@team.Name</h3>
+                        <div class="card-meta">
+                            <span>@team.City</span>
+                            <span>Edad @team.Age</span>
+                            <span>@team.Region</span>
+                        </div>
+                        <span class="status-badge @team.Class">@team.Status</span>
+                    </div>
+                </article>
+            }
+        </div>
+        <p style="text-align:center;margin-top:2rem;color:var(--text-muted);">Las funciones de perfil de jugador se habilitarán en una versión futura.</p>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Hotels & Accommodation";
+    ViewData["Description"] = "Junior League Cup Antalya hotels and accommodation — Kundu, Lara, Side, and Belek partner hotels.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>HOTELS & ACCOMMODATION</h1>
+        <p class="lead">Football and holiday experience in Antalya — accommodation packages for families and teams.</p>
+        <p class="breadcrumb"><a asp-action="Index">Home</a> / Hotels</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            The JLC Antalya final combines the excitement of football with Antalya's tourism strength.
+            Accommodation, transfer, and organization packages can be arranged for families and teams.
+        </p>
+        <div class="hotel-grid">
+            @foreach (var hotel in new[] {
+                new { Name = "Kremlin Palace", Region = "Kundu", Info = "Partner hotel — accommodation and transfers." },
+                new { Name = "Limak Lara", Region = "Lara", Info = "Organization accommodation partner." },
+                new { Name = "Fame Lara", Region = "Lara", Info = "Family and team accommodation." },
+                new { Name = "Selectum Noa", Region = "Side", Info = "Partner hotel — details coming soon." },
+                new { Name = "Hane Otel Group", Region = "Belek", Info = "Partnership discussions in progress." },
+                new { Name = "Süral Otel Group", Region = "Antalya City Center", Info = "Organization partner." },
+                new { Name = "Emirhan Hotels", Region = "Lara", Info = "Accommodation package options." }
+            })
+            {
+                <div class="hotel-card">
+                    <h3>@hotel.Name</h3>
+                    <p class="region">@hotel.Region</p>
+                    <p>@hotel.Info</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm" style="margin-top:1rem;">Details</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

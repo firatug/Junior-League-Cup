@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Sobre nosotros";
+    ViewData["Description"] = "Sobre Junior League Cup — una organización de fútbol juvenil de nueva generación bajo Zenit Event y Zenit Tourism.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>SOBRE NOSOTROS</h1>
+        <p class="lead">Una organización de fútbol juvenil de nueva generación desarrollada por Zenit Event.</p>
+        <p class="breadcrumb"><a asp-action="Index">Inicio</a> / Sobre nosotros</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1bd40?w=900&q=80');" role="img" aria-label="Organización futbolística"></div>
+        <div class="content-text">
+            <span class="section-label">Zenit Event</span>
+            <h2>Una marca de organización profesional</h2>
+            <p>
+                Junior League Cup es una organización de fútbol juvenil de nueva generación desarrollada por Zenit Event bajo el paraguas de Zenit Tourism.
+                El proyecto busca crear un modelo de organización sostenible y profesional combinando eventos deportivos, medios, turismo
+                y desarrollo del fútbol juvenil bajo un mismo techo.
+            </p>
+            <ul class="check-list">
+                <li>Selecciones regionales y final en Antalya</li>
+                <li>Visibilidad para scouts y alcance mediático</li>
+                <li>Integración de patrocinio y turismo deportivo</li>
+                <li>Estructura de marca preparada para el crecimiento internacional</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="content-section section-muted">
+    <div class="container">
+        <div class="cta-banner">
+            <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-overlay" aria-hidden="true"></div>
+            <div class="cta-content">
+                <h2>CAMINO A ANTALYA</h2>
+                <p>Un recorrido de organización profesional para los jóvenes talentos del fútbol turco.</p>
+                <a asp-action="TakimBasvurusu" class="btn btn-gold">Solicitud de equipo</a>
+                <a asp-action="Sponsorluk" class="btn btn-outline">Convertirse en patrocinador</a>
+            </div>
+        </div>
+    </div>
+</section>

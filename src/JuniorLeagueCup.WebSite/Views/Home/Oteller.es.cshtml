@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Hoteles y alojamiento";
+    ViewData["Description"] = "Hoteles y alojamiento Junior League Cup en Antalya — hoteles asociados en Kundu, Lara, Side y Belek.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>HOTELES Y ALOJAMIENTO</h1>
+        <p class="lead">Experiencia de fútbol y vacaciones en Antalya — paquetes de alojamiento para familias y equipos.</p>
+        <p class="breadcrumb"><a asp-action="Index">Inicio</a> / Hoteles</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            La final en Antalya de JLC combina la emoción del fútbol con la fortaleza turística de Antalya.
+            Se pueden organizar paquetes de alojamiento, traslados y organización para familias y equipos.
+        </p>
+        <div class="hotel-grid">
+            @foreach (var hotel in new[] {
+                new { Name = "Kremlin Palace", Region = "Kundu", Info = "Hotel asociado — alojamiento y traslados." },
+                new { Name = "Limak Lara", Region = "Lara", Info = "Hotel asociado de la organización." },
+                new { Name = "Fame Lara", Region = "Lara", Info = "Alojamiento para familias y equipos." },
+                new { Name = "Selectum Noa", Region = "Side", Info = "Hotel asociado — detalles próximamente." },
+                new { Name = "Hane Otel Group", Region = "Belek", Info = "Conversaciones de asociación en curso." },
+                new { Name = "Süral Otel Group", Region = "Centro de Antalya", Info = "Socio de la organización." },
+                new { Name = "Emirhan Hotels", Region = "Lara", Info = "Opciones de paquetes de alojamiento." }
+            })
+            {
+                <div class="hotel-card">
+                    <h3>@hotel.Name</h3>
+                    <p class="region">@hotel.Region</p>
+                    <p>@hotel.Info</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm" style="margin-top:1rem;">Detalles</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

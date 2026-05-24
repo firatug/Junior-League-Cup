@@ -21,6 +21,39 @@ public class NewsEditViewModel
     [Display(Name = "İçerik")]
     public string Content { get; set; } = string.Empty;
 
+    [StringLength(200)]
+    [Display(Name = "Başlık (EN)")]
+    public string? TitleEn { get; set; }
+
+    [StringLength(500)]
+    [Display(Name = "Özet (EN)")]
+    public string? SummaryEn { get; set; }
+
+    [Display(Name = "İçerik (EN)")]
+    public string? ContentEn { get; set; }
+
+    [StringLength(200)]
+    [Display(Name = "Başlık (ES)")]
+    public string? TitleEs { get; set; }
+
+    [StringLength(500)]
+    [Display(Name = "Özet (ES)")]
+    public string? SummaryEs { get; set; }
+
+    [Display(Name = "İçerik (ES)")]
+    public string? ContentEs { get; set; }
+
+    [StringLength(200)]
+    [Display(Name = "Başlık (DE)")]
+    public string? TitleDe { get; set; }
+
+    [StringLength(500)]
+    [Display(Name = "Özet (DE)")]
+    public string? SummaryDe { get; set; }
+
+    [Display(Name = "İçerik (DE)")]
+    public string? ContentDe { get; set; }
+
     [Required]
     [Display(Name = "Kategori")]
     public string Category { get; set; } = "Haber";

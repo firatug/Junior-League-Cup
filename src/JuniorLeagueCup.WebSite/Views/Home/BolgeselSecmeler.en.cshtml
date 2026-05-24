@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Regional Selections";
+    ViewData["Description"] = "Junior League Cup regional selections — Istanbul, Ankara, Izmir, Bursa, Adana, and Antalya. The first step on the Road to Antalya.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>REGIONAL SELECTIONS</h1>
+        <p class="lead">Regional selections are the first step on the Junior League Cup journey. Successful teams in each region qualify for the Antalya final.</p>
+        <p class="breadcrumb"><a asp-action="Index">Home</a> / Regional Selections</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="city-grid">
+            @foreach (var city in new[] { "İstanbul", "Ankara", "İzmir", "Bursa", "Adana", "Antalya" })
+            {
+                <div class="city-card">
+                    <h3>@city</h3>
+                    <span class="status">Date: To be announced</span>
+                    <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-muted);">Participation status and partner club information will be updated.</p>
+                    <a asp-action="TakimBasvurusu" class="btn btn-primary btn-sm" style="margin-top:1.25rem;">Apply Now</a>
+                </div>
+            }
+            <div class="city-card">
+                <h3>Other Regions</h3>
+                <span class="status open">Coming Soon</span>
+                <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-muted);">Contact us for announcements about new host cities.</p>
+                <a asp-action="Iletisim" class="btn btn-outline-dark btn-sm" style="margin-top:1.25rem;">Get Information</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -21,10 +21,10 @@
                 <div class="body">
                     @if (showCategory)
                     {
-                        <span class="media-tag">@article.Category</span>
+                        <span class="media-tag">@NewsLocalization.GetCategory(article)</span>
                     }
-                    <h3><a asp-action="HaberDetay" asp-route-slug="@article.Slug">@article.Title</a></h3>
-                    <p>@article.Summary</p>
+                    <h3><a asp-action="HaberDetay" asp-route-slug="@article.Slug">@NewsLocalization.GetTitle(article)</a></h3>
+                    <p>@NewsLocalization.GetSummary(article)</p>
                 </div>
             </article>
         }

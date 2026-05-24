@@ -1,0 +1,39 @@
+@{
+    var formType = ViewData["FormType"] as string ?? "form";
+    var (title, message) = FormThankYouLocalization.GetContent(formType);
+    ViewData["Title"] = title;
+    ViewData["Description"] = message;
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>@title.ToUpperInvariant()</h1>
+        <p class="lead">@message</p>
+        <p class="breadcrumb"><a asp-action="Index">Home</a> / Thank You</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container" style="max-width:640px;text-align:center;">
+        <div class="admin-card" style="padding:2.5rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;" aria-hidden="true">✓</div>
+            <h2 style="margin-bottom:1rem;">@title</h2>
+            <p style="color:var(--text-muted);line-height:1.7;margin-bottom:2rem;">@message</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+                <a asp-action="Index" class="btn btn-primary">Return to Home</a>
+                @if (formType == FormThankYouTypes.TakimBasvurusu)
+                {
+                    <a asp-action="BolgeselSecmeler" class="btn btn-outline-dark">Regional Selections</a>
+                }
+                else if (formType == FormThankYouTypes.Sponsorluk)
+                {
+                    <a asp-action="Sponsorluk" class="btn btn-outline-dark">Sponsorship</a>
+                }
+                else
+                {
+                    <a asp-action="Medya" class="btn btn-outline-dark">News</a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
