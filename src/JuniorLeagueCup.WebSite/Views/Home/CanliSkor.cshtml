@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Canlı Skor";
+    ViewData["Description"] = "Junior League Cup bölgesel seçme turnuvaları — canlı fikstür ve eşleşmeler. İstanbul, Ankara, İzmir, Bursa, Adana, Gaziantep.";
+    var cities = new[] { "İstanbul", "Ankara", "İzmir", "Bursa", "Adana", "Gaziantep" };
+    string CitySlug(string city) => city switch
+    {
+        "İstanbul" => "istanbul",
+        "Ankara" => "ankara",
+        "İzmir" => "izmir",
+        "Bursa" => "bursa",
+        "Adana" => "adana",
+        "Gaziantep" => "gaziantep",
+        _ => city.ToLowerInvariant()
+    };
+}
+
+<section class="page-hero">
+    <div class="container">
+        <span class="live-hero-badge"><span class="live-dot" aria-hidden="true"></span> CANLI</span>
+        <h1>CANLI SKOR</h1>
+        <p class="lead">Bölgesel seçme turnuvalarından fikstür ve eşleşmeler. Takımlar netleştikçe skorlar burada güncellenecek.</p>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Canlı Skor</p>
+    </div>
+</section>
+
+<section class="live-nav-section">
+    <div class="container">
+        <div class="live-city-nav">
+            @foreach (var city in cities)
+            {
+                <a href="#@CitySlug(city)" class="live-city-pill">@city Seçmeleri</a>
+            }
+            <a href="#buyuk-final" class="live-city-pill live-city-pill--final">Büyük Final</a>
+        </div>
+    </div>
+</section>
+
+@foreach (var city in cities)
+{
+    <section class="live-city-section @(Array.IndexOf(cities, city) % 2 == 1 ? "section-muted" : "")" id="@CitySlug(city)">
+        <div class="container">
+            <div class="live-city-header">
+                <span class="section-label">Bölgesel Seçmeler</span>
+                <h2>@city Seçmeleri</h2>
+                <p class="live-city-desc">8 takımlı eleme turnuvası — bölge şampiyonu Antalya finaline yükselir.</p>
+                <span class="live-status-badge"><span class="live-dot live-dot--sm" aria-hidden="true"></span> Seçmeler devam ediyor</span>
+            </div>
+            <partial name="_TournamentBracket" />
+            <p class="live-bracket-note">Takım isimleri henüz açıklanmadı. Başvurular ve seçmeler tamamlandıkça fikstür güncellenecektir.</p>
+        </div>
+    </section>
+}
+
+<section class="live-city-section live-grand-final section-muted" id="buyuk-final">
+    <div class="container">
+        <div class="live-city-header">
+            <span class="section-label">Büyük Şampiyona</span>
+            <h2>Junior League Cup Büyük Final</h2>
+            <p class="live-city-desc">Bölge şampiyonları Antalya'da büyük finalde karşılaşacak — kupa sahibi burada belirlenecek.</p>
+            <span class="live-status-badge"><span class="live-dot live-dot--sm" aria-hidden="true"></span> Final fikstürü yakında</span>
+        </div>
+        <partial name="_TournamentBracket" view-data="@(new ViewDataDictionary(ViewData) {
+            { "BracketShowLogo", true },
+            { "BracketFinalLabel", "Büyük Final" },
+            { "BracketFinalDate", "Antalya · Tarih yakında" }
+        })" />
+        <p class="live-bracket-note">Bölgesel seçmeler tamamlandıkça finalist takımlar bu eşleşmeye yansıtılacaktır.</p>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="AntalyaFinali" class="btn btn-primary">Antalya Finali Detayları</a>
+        </div>
+    </div>
+</section>

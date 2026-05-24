@@ -1,290 +1,349 @@
 ﻿@{
-    ViewData["Title"] = "Ana Sayfa";
+    ViewData["Title"] = "Road to Antalya";
+    ViewData["Description"] = "Junior League Cup — Türkiye'nin farklı şehirlerinden 7-8 yaş futbol takımları bölgesel seçmelerle Antalya finaline uzanıyor.";
 }
 
-<section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-pattern" aria-hidden="true"></div>
-    <div class="container hero-content">
-        <span class="hero-badge">🏆 2026 Sezonu Açıldı</span>
-        <h1>
-            7 YAŞ
-            <span>FUTBOL TURNUVALARI</span>
-        </h1>
-        <p class="hero-desc">
-            Junior League Cup, minik futbolcular için güvenli, profesyonel ve unutulmaz turnuva deneyimi sunar.
-            Takımınızı kurun, sahaya çıkın, şampiyonluğu hedefleyin!
+<section class="hero hero-split">
+    <div class="hero-stadium" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <h1>
+                Junior League Cup
+                <span class="hero-highlight">Road to Antalya</span>
+                2026
+            </h1>
+            <p class="hero-desc">
+                Türkiye'nin farklı şehirlerinden gelen 7-8 yaş genç yetenekler, bölgesel seçmelerden
+                Antalya finaline uzanıyor. Profesyonel organizasyon, scout görünürlüğü ve aile odaklı spor turizmi deneyimi.
+            </p>
+            <div class="hero-actions">
+                <a asp-action="TakimBasvurusu" class="btn btn-primary">Takım Başvurusu Yap</a>
+                <a asp-action="BolgeselSecmeler" class="btn btn-white">Bölgesel Seçmeler</a>
+            </div>
+            <ul class="hero-features">
+                <li>7-8 yaş profesyonel turnuva formatı</li>
+                <li>Bölgesel seçmelerden Antalya finaline</li>
+                <li>Scout görünürlüğü ve medya içerikleri</li>
+            </ul>
+        </div>
+        <p class="hero-watermark" aria-hidden="true">Junior League Cup</p>
+    </div>
+</section>
+
+<div class="hero-cards-wrap">
+    <div class="container">
+        <div class="info-cards">
+            <a class="info-card info-card--1" href="#jlc-nedir">
+                <span class="info-card-num" aria-hidden="true">01</span>
+                <div class="info-card-content">
+                    <strong>7-8 Yaş Turnuvası</strong>
+                    <span>Profesyonel format, yaş grubuna uygun organizasyon</span>
+                </div>
+            </a>
+            <a class="info-card info-card--2" href="#nasil-isler">
+                <span class="info-card-num" aria-hidden="true">02</span>
+                <div class="info-card-content">
+                    <strong>Road to Antalya</strong>
+                    <span>Bölgesel seçmelerden büyük finale</span>
+                </div>
+            </a>
+            <a class="info-card info-card--3" href="#scout">
+                <span class="info-card-num" aria-hidden="true">03</span>
+                <div class="info-card-content">
+                    <strong>Scout & Medya</strong>
+                    <span>Görünürlük ve profesyonel içerik</span>
+                </div>
+            </a>
+            <a class="info-card info-card--4" href="#efsane-bulusma">
+                <span class="info-card-num" aria-hidden="true">04</span>
+                <div class="info-card-content">
+                    <strong>Efsane Buluşma</strong>
+                    <span>Konuk futbolcularla tanışma oturumları</span>
+                </div>
+            </a>
+        </div>
+</div>
+</div>
+
+<section id="jlc-nedir">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=900&q=80');" role="img" aria-label="Junior League Cup organizasyonu"></div>
+        <div class="content-text">
+            <span class="section-label">JLC Nedir?</span>
+            <h2>Geleceğin Oyuncuları Burada Başlar</h2>
+            <p>
+                Junior League Cup, çocukların yalnızca maç yaptığı bir turnuva değil; profesyonel futbol atmosferini deneyimlediği,
+                scout ekipleri tarafından izlenebildiği, medya görünürlüğü kazandığı ve aileleriyle birlikte unutulmaz bir spor turizmi deneyimi yaşadığı yeni nesil futbol organizasyonudur.
+            </p>
+            <ul class="check-list">
+                <li>Çocuk futbol gelişimi</li>
+                <li>Profesyonel organizasyon deneyimi</li>
+                <li>Bölgesel seçmeler ve Antalya finali</li>
+                <li>Scout raporları ve görünürlük</li>
+                <li>Aile ve kulüp odaklı yapı</li>
+            </ul>
+            <a asp-action="JlcNedir" class="btn btn-primary" style="margin-top:1.5rem;">Detaylı Bilgi</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="nasil-isler">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Organizasyon</span>
+            <h2>Road to Antalya: JLC Yolculuğu</h2>
+            <p>Bölgesel seçmelerden şampiyonluğa uzanan profesyonel organizasyon süreci.</p>
+        </div>
+        <div class="timeline" id="jlcTimeline">
+            <div class="timeline-track" aria-hidden="true">
+                <div class="timeline-line"></div>
+                <div class="timeline-line-progress"></div>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+                <span class="timeline-arrow">›</span>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">01</div>
+                <h3>Bölgesel Seçmeler</h3>
+                <p>İstanbul, Ankara, İzmir, Bursa, Adana ve diğer şehirlerde kulüp ve futbol okulları arasında seçmeler.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">02</div>
+                <h3>Bölge Şampiyonları</h3>
+                <p>Her bölgede başarılı takımlar Antalya final organizasyonuna katılma hakkı kazanır.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">03</div>
+                <h3>Antalya Finali</h3>
+                <p>Yaklaşık 40 takım profesyonel saha ve otel organizasyonu içinde karşılaşır.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">04</div>
+                <h3>Scout & Medya</h3>
+                <p>Oyuncular scout ekipleri, medya ve sponsor markalar karşısında görünürlük elde eder.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-num">05</div>
+                <h3>JLC Şampiyonu</h3>
+                <p>Final maçları sonunda Junior League Cup şampiyonu belirlenir.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="harita">
+    <div class="container map-section">
+        <div class="content-text">
+            <span class="section-label">Bölgesel Seçmeler</span>
+            <h2>Türkiye'nin Yetenekleri Antalya'da Buluşuyor</h2>
+            <p>
+                Bölgesel seçmeler, Junior League Cup yolculuğunun ilk adımıdır. Her bölgede başarılı olan takımlar
+                Antalya final organizasyonuna katılmaya hak kazanır.
+            </p>
+            <a asp-action="BolgeselSecmeler" class="btn btn-primary" style="margin-top:1.25rem;">Şehirleri İncele</a>
+        </div>
+        <div class="map-visual" aria-hidden="true">
+            <partial name="_TurkeyMap" />
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="antalya">
+    <div class="container content-grid">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=900&q=80');" role="img" aria-label="Antalya final organizasyonu"></div>
+        <div class="content-text">
+            <span class="section-label">Antalya Finali</span>
+            <h2>Büyük Final Antalya'da</h2>
+            <p>
+                Antalya, Junior League Cup'ın ana sahnesidir. Bölgesel seçmelerden gelen takımlar profesyonel futbol organizasyonu
+                atmosferinde karşılaşır. Maçlar, scout değerlendirmeleri, medya çekimleri, ödül törenleri ve aile etkinlikleri bir arada yaşanır.
+            </p>
+            <ul class="check-list">
+                <li>Profesyonel sahalar ve otel organizasyonu</li>
+                <li>Grup, eleme ve final maçları</li>
+                <li>Scout izleme alanı ve medya röportajları</li>
+                <li>Kupa töreni ve aile etkinlikleri</li>
+            </ul>
+            <a asp-action="AntalyaFinali" class="btn btn-primary" style="margin-top:1.25rem;">Final Deneyimini Keşfet</a>
+        </div>
+    </div>
+</section>
+
+<section id="scout">
+    <div class="container content-grid reverse">
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=900&q=80');" role="img" aria-label="Scout değerlendirme"></div>
+        <div class="content-text">
+            <span class="section-label">Scout Sistemi</span>
+            <h2>Genç Yetenekler İçin Görünürlük Alanı</h2>
+            <p>
+                Junior League Cup, oyuncuların gözlemlendiği ve değerlendirildiği bir ortam oluşturmayı hedefler.
+                Scout ekipleri ve futbol profesyonelleri gelişim potansiyelini inceleme fırsatı bulur.
+            </p>
+            <div class="notice">
+                Scout sistemi kesin transfer vaadi değildir; görünürlük ve değerlendirme fırsatı sunar.
+            </div>
+            <a href="#efsane-bulusma" class="btn btn-outline-dark" style="margin-right:0.75rem;">Efsane Buluşma Programı</a>
+            <a asp-action="ScoutSistemi" class="btn btn-primary">Scout Sistemini İncele</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="efsane-bulusma">
+    <div class="container content-grid">
+        <div class="content-image content-image--legend" style="background-image: url('@Url.Content("~/images/ronaldinho.png")');" role="img" aria-label="Ronaldinho — efsane buluşma"></div>
+        <div class="content-text">
+            <span class="section-label">Görünürlük Alanı</span>
+            <h2>Efsane Buluşma</h2>
+            <p>
+                Antalya finalinde, organizasyon takvimine göre belirlenen konuk futbolcularla kısa tanışma ve
+                deneyim paylaşımı oturumları düzenlenir. Genç oyuncular ilham alır; kulüpler ve veliler programa dahil olabilir.
+            </p>
+            <ul class="check-list">
+                <li>Tanışma ve motivasyon buluşmaları</li>
+                <li>Kariyer hikâyelerini dinleme fırsatı</li>
+            </ul>
+            <div class="notice">
+                Transfer veya kulüp taahhüdü içermez. Konuk isimleri ve program takvime göre duyurulur.
+            </div>
+            <a asp-action="AntalyaFinali" class="btn btn-primary" style="margin-top:1.25rem;">Antalya Finali</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="veli">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Veli & Oyuncu</span>
+            <h2>Çocuğunuz İçin Sadece Bir Turnuva Değil</h2>
+            <p>Profesyonel saha atmosferi, medya içerikleri ve aile odaklı organizasyon deneyimi.</p>
+        </div>
+        <div class="package-grid">
+            <div class="package-card">
+                <h3>Standart Deneyim</h3>
+                <p class="package-desc">Organizasyon katılımı ve temel maç programı.</p>
+                <ul>
+                    <li>Organizasyon katılımı</li>
+                    <li>Maç programı ve takım fikstürü</li>
+                    <li>Temel medya görünürlüğü</li>
+                </ul>
+            </div>
+            <div class="package-card featured">
+                <h3>Premium Oyuncu</h3>
+                <p class="package-desc">Gelişmiş medya ve oyuncu kartı deneyimi.</p>
+                <ul>
+                    <li>Profesyonel fotoğraf çekimi</li>
+                    <li>Kişisel oyuncu kartı</li>
+                    <li>Kısa video içerik</li>
+                    <li>Performans raporu</li>
+                </ul>
+            </div>
+            <div class="package-card">
+                <h3>Elite Scout</h3>
+                <p class="package-desc">Detaylı profil ve scout değerlendirme alanı.</p>
+                <ul>
+                    <li>Detaylı oyuncu profili</li>
+                    <li>Scout değerlendirme raporu</li>
+                    <li>Özel medya içeriği</li>
+                    <li>Röportaj / tanıtım alanı</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-size:0.9rem;">
+            Paket detayları ve fiyatlandırma yönetim panelinden güncellenecektir.
+            <a asp-action="VeliOyuncuDeneyimi" style="color:var(--accent);font-weight:600;"> Tüm paketleri görüntüle →</a>
         </p>
-        <div class="hero-actions">
-            <a asp-action="Turnuvalar" class="btn btn-primary">Turnuvalara Katıl</a>
-            <a asp-action="Hakkimizda" class="btn btn-outline">Bizi Tanıyın</a>
-        </div>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <strong data-count="64" data-suffix="+">0</strong>
-                <span>Kayıtlı Takım</span>
-            </div>
-            <div class="stat-item">
-                <strong data-count="18">0</strong>
-                <span>Yıllık Turnuva</span>
-            </div>
-            <div class="stat-item">
-                <strong data-count="1400" data-suffix="+">0</strong>
-                <span>Genç Futbolcu</span>
-            </div>
-            <div class="stat-item">
-                <strong data-count="12">0</strong>
-                <span>Şehir</span>
-            </div>
-        </div>
     </div>
 </section>
 
-<section class="sponsors">
-    <div class="container">
-        <div class="sponsor-logos">
-            <span>SPOR İSTANBUL</span>
-            <span>TFF YILDIZLAR</span>
-            <span>FAIR PLAY</span>
-            <span>YOUTH SPORTS</span>
-            <span>KIDS FOOTBALL</span>
-        </div>
-    </div>
-</section>
-
-<section id="turnuvalar">
+<section id="sponsor">
     <div class="container">
         <div class="section-header">
-            <span class="section-label">Yaklaşan Etkinlikler</span>
-            <h2>Öne Çıkan Turnuvalar</h2>
-            <p>7 yaş kategorisinde düzenlenen resmi turnuvalarımıza hemen kayıt olun ve minik yıldızlarınızı sahaya taşıyın.</p>
+            <span class="section-label">Sponsorluk</span>
+            <h2>Geleceğin Futbol Hikâyesinde Markanıza Yer Açın</h2>
+            <p>Çocuk futbolu, aile deneyimi, medya görünürlüğü ve spor turizmini bir araya getiren güçlü sponsorluk platformu.</p>
         </div>
-        <div class="card-grid">
-            <article class="tournament-card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951f0981?w=800&q=80');">
-                    <span class="card-badge">Kayıt Açık</span>
-                </div>
-                <div class="card-body">
-                    <h3>İstanbul Bahar Kupası</h3>
-                    <div class="meta">
-                        <span>📅 14-16 Haziran 2026</span>
-                        <span>📍 Başakşehir</span>
-                    </div>
-                    <p>16 takımlık eleme usulü turnuva. Her takım minimum 5 maç garantisi ile oynar.</p>
-                    <div class="card-footer">
-                        <span class="price">₺4.500 / takım</span>
-                        <a asp-action="Turnuvalar" class="btn btn-sm btn-primary">Detaylar</a>
-                    </div>
-                </div>
-            </article>
-            <article class="tournament-card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80');">
-                    <span class="card-badge">Son 8 Kontenjan</span>
-                </div>
-                <div class="card-body">
-                    <h3>Ankara Mini Lig</h3>
-                    <div class="meta">
-                        <span>📅 5-7 Temmuz 2026</span>
-                        <span>📍 Eryaman</span>
-                    </div>
-                    <p>Lig usulü 8 haftalık organizasyon. Fair play ödüllü, lisanslı hakem kadrosu.</p>
-                    <div class="card-footer">
-                        <span class="price">₺3.800 / takım</span>
-                        <a asp-action="Turnuvalar" class="btn btn-sm btn-primary">Detaylar</a>
-                    </div>
+        <div class="sponsor-grid">
+            <div class="sponsor-tier"><h3>Ana Sponsor</h3><ul><li>Logo ve web görünürlüğü</li><li>Organizasyon alanı</li><li>Medya içerikleri</li></ul></div>
+            <div class="sponsor-tier"><h3>Bölgesel Sponsor</h3><ul><li>Şehir bazlı aktivasyon</li><li>Sosyal medya</li><li>Saha görünürlüğü</li></ul></div>
+            <div class="sponsor-tier"><h3>Forma Sponsoru</h3><ul><li>Takım forma alanı</li><li>Fotoğraf ve video</li><li>Marka aktivasyonu</li></ul></div>
+            <div class="sponsor-tier"><h3>Medya Sponsoru</h3><ul><li>İçerik sponsorluğu</li><li>Röportaj alanları</li><li>Dijital yayın</li></ul></div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;">
+            <a asp-action="Sponsorluk" class="btn btn-primary">Sponsorluk Dosyası Talep Et</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-muted" id="medya">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Medya</span>
+            <h2>Road to Antalya İçerikleri</h2>
+            <p>Haberler, röportajlar, fotoğraf ve video galerileri — yaşayan bir medya platformu.</p>
+        </div>
+        <div class="media-grid">
+            <article class="media-card">
+                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80');"></div>
+                <div class="body">
+                    <span class="media-tag">Haber</span>
+                    <h3>Junior League Cup 2026 Sezonu Başlıyor</h3>
+                    <p>Bölgesel seçme takvimi ve Antalya final hazırlıkları duyuruldu.</p>
                 </div>
             </article>
-            <article class="tournament-card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80');">
-                    <span class="card-badge">Yeni</span>
+            <article class="media-card">
+                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80');"></div>
+                <div class="body">
+                    <span class="media-tag">Video</span>
+                    <h3>Road to Antalya: Yolculuk Başlıyor</h3>
+                    <p>Organizasyon tanıtım videosu ve marka hikâyesi.</p>
                 </div>
-                <div class="card-body">
-                    <h3>İzmir Sahil Kupası</h3>
-                    <div class="meta">
-                        <span>📅 22-24 Ağustos 2026</span>
-                        <span>📍 Göztepe</span>
-                    </div>
-                    <p>Sahil şehri atmosferinde 3 gün süren festival havasında futbol şöleni.</p>
-                    <div class="card-footer">
-                        <span class="price">₺4.200 / takım</span>
-                        <a asp-action="Turnuvalar" class="btn btn-sm btn-primary">Detaylar</a>
-                    </div>
+            </article>
+            <article class="media-card">
+                <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600&q=80');"></div>
+                <div class="body">
+                    <span class="media-tag">Röportaj</span>
+                    <h3>Kulüpler JLC Deneyimini Anlatıyor</h3>
+                    <p>Profesyonel organizasyon ve görünürlük fırsatları.</p>
                 </div>
             </article>
         </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="Medya" class="btn btn-outline-dark">Tüm Medya İçerikleri</a>
+        </div>
     </div>
 </section>
 
-<section class="bg-alt">
+<section id="oteller">
     <div class="container">
         <div class="section-header">
-            <span class="section-label">Neden Biz?</span>
-            <h2>Junior League Cup Farkı</h2>
-            <p>Çocukların güvenliği ve gelişimi her şeyin önünde. Profesyonel organizasyon, sıcak atmosfer.</p>
+            <span class="section-label">Konaklama</span>
+            <h2>Antalya'da Futbol ve Tatil Deneyimi</h2>
+            <p>JLC Antalya final organizasyonu, futbol heyecanını Antalya'nın turizm gücüyle birleştirir.</p>
         </div>
-        <div class="features-grid">
-            <div class="feature-box">
-                <div class="feature-icon">🛡️</div>
-                <h3>Güvenli Ortam</h3>
-                <p>Lisanslı antrenörler, sağlık ekibi ve yaş grubuna uygun saha düzenlemeleri ile tam güvenlik.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">⚖️</div>
-                <h3>Adil Müsabaka</h3>
-                <p>TFF onaylı hakemler, eşit maç dağılımı ve şeffaf puan sistemi ile fair play garantisi.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">📸</div>
-                <h3>Profesyonel Medya</h3>
-                <p>Maç fotoğrafları, özet videolar ve dijital rozetler — anılar ömür boyu saklansın.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">🏅</div>
-                <h3>Ödül Töreni</h3>
-                <p>Şampiyonluk kupası, gol kralı, fair play ve en centilmen takım ödülleri.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">👨‍👩‍👧</div>
-                <h3>Aile Dostu</h3>
-                <p>Seyirci alanları, ikram köşesi ve çocuk oyun alanları ile keyifli bir gün.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">📋</div>
-                <h3>Kolay Kayıt</h3>
-                <p>Online başvuru, hızlı onay ve 7/24 destek hattı ile zahmetsiz süreç.</p>
-            </div>
+        <div class="hotel-grid">
+            <div class="hotel-card"><h3>Kremlin Palace</h3><p class="region">Kundu</p><p>Partner otel — konaklama ve transfer paketleri.</p></div>
+            <div class="hotel-card"><h3>Limak Lara</h3><p class="region">Lara</p><p>Organizasyon konaklama partneri.</p></div>
+            <div class="hotel-card"><h3>Fame Lara</h3><p class="region">Lara</p><p>Aile ve takım konaklama seçeneği.</p></div>
+            
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a asp-action="Oteller" class="btn btn-outline-dark">Tüm Oteller</a>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Fikstür</span>
-            <h2>Yaklaşan Maçlar</h2>
-            <p>İstanbul Bahar Kupası grup aşamasından öne çıkan karşılaşmalar.</p>
-        </div>
-        <div class="schedule-list">
-            <div class="match-row">
-                <div class="match-time">09:00</div>
-                <div class="match-teams">
-                    <span class="team">Kartal Yıldızları</span>
-                    <span class="match-vs">VS</span>
-                    <span class="team">Beşiktaş Minikler</span>
-                </div>
-                <div class="match-venue">Saha 1 — Başakşehir</div>
-            </div>
-            <div class="match-row">
-                <div class="match-time">10:30</div>
-                <div class="match-teams">
-                    <span class="team">Galatasaray U7</span>
-                    <span class="match-vs">VS</span>
-                    <span class="team">Fenerbahçe Yıldız</span>
-                </div>
-                <div class="match-venue">Saha 2 — Başakşehir</div>
-            </div>
-            <div class="match-row">
-                <div class="match-time">12:00</div>
-                <div class="match-teams">
-                    <span class="team">Trabzon Minikleri</span>
-                    <span class="match-vs">VS</span>
-                    <span class="team">Bursa Spor U7</span>
-                </div>
-                <div class="match-venue">Saha 1 — Başakşehir</div>
-            </div>
-            <div class="match-row">
-                <div class="match-time">14:00</div>
-                <div class="match-teams">
-                    <span class="team">Ankara Şimşekleri</span>
-                    <span class="match-vs">VS</span>
-                    <span class="team">İzmir Deniz Yıldız</span>
-                </div>
-                <div class="match-venue">Saha 3 — Başakşehir</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-alt">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Nasıl Çalışır?</span>
-            <h2>4 Adımda Turnuvaya Katılın</h2>
-        </div>
-        <div class="steps">
-            <div class="step-item">
-                <h3>Takım Oluşturun</h3>
-                <p>7 yaş doğum yılına uygun en az 8, en fazla 12 oyuncudan oluşan kadronuzu hazırlayın.</p>
-            </div>
-            <div class="step-item">
-                <h3>Başvuru Yapın</h3>
-                <p>Turnuva sayfasından online formu doldurun ve gerekli belgeleri yükleyin.</p>
-            </div>
-            <div class="step-item">
-                <h3>Onay Alın</h3>
-                <p>Ekibimiz 48 saat içinde başvurunuzu değerlendirip size dönüş yapar.</p>
-            </div>
-            <div class="step-item">
-                <h3>Sahaya Çıkın</h3>
-                <p>Fikstür ve forma bilgileriyle turnuva günü profesyonel bir deneyim yaşayın!</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Veliler & Antrenörler</span>
-            <h2>Deneyimler</h2>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Oğlum ilk turnuvasında çok heyecanlıydı. Organizasyon kusursuzdu, hakemler çocuklara sabırlı davrandı. Kesinlikle tekrar katılacağız."</blockquote>
-                <div class="author">
-                    <div class="avatar">AY</div>
-                    <div class="author-info">
-                        <strong>Ayşe Yılmaz</strong>
-                        <span>Veli — Kartal Yıldızları</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <blockquote>"7 yaş grubunda bu kadar profesyonel bir turnuva bulmak zordu. Maç süreleri, saha kalitesi ve ödül töreni harikaydı."</blockquote>
-                <div class="author">
-                    <div class="avatar">MK</div>
-                    <div class="author-info">
-                        <strong>Mehmet Kaya</strong>
-                        <span>Antrenör — Beşiktaş Minikler</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Fair play ödülünü kazanmak çocuklarımız için büyük motivasyon oldu. Junior League Cup ailemizin parçası oldu."</blockquote>
-                <div class="author">
-                    <div class="avatar">SD</div>
-                    <div class="author-info">
-                        <strong>Selin Demir</strong>
-                        <span>Kulüp Başkanı — İzmir Deniz Yıldız</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
+<section class="section-muted">
     <div class="container">
         <div class="cta-banner">
             <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-overlay" aria-hidden="true"></div>
             <div class="cta-content">
-                <h2>TAKIMINIZ SAHAYI BEKLİYOR</h2>
-                <p>2026 sezonu kayıtları devam ediyor. Kontenjanlar sınırlı — yerinizi şimdi ayırtın!</p>
-                <a asp-action="Turnuvalar" class="btn btn-accent">Hemen Kayıt Ol</a>
-                <a asp-action="KatilimGereklilikleri" class="btn btn-outline">Gereklilikleri İncele</a>
+                <h2>FROM LOCAL DREAMS TO THE BIG STAGE</h2>
+                <p>Futbol okulunuz veya kulübünüz Junior League Cup yolculuğuna katılsın. Bölgesel seçmeler için ön kayıt oluşturun.</p>
+                <a asp-action="TakimBasvurusu" class="btn btn-gold">Takım Başvurusu Yap</a>
+                <a asp-action="Iletisim" class="btn btn-outline">Bize Ulaşın</a>
             </div>
         </div>
     </div>

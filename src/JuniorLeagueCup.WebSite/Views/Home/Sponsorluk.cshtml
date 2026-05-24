@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Sponsorluk";
+    ViewData["Description"] = "Junior League Cup sponsorluk fırsatları — ana sponsor, bölgesel sponsor, medya ve forma sponsorluğu.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>SPONSORLUK</h1>
+        <p class="lead">Geleceğin futbol hikâyesinde markanıza yer açın.</p>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Sponsorluk</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            Junior League Cup, çocuk futbolu, aile deneyimi, medya görünürlüğü, spor turizmi ve sosyal etkiyi bir araya getiren güçlü bir sponsorluk platformudur.
+        </p>
+        <div class="sponsor-grid">
+            @foreach (var tier in new[] { "Ana Sponsor", "Bölgesel Sponsor", "Forma Sponsoru", "Saha Sponsoru", "Scout Deneyimi Sponsoru", "Medya Sponsoru", "MVP Ödül Sponsoru", "Aile Etkinlik Sponsoru" })
+            {
+                <div class="sponsor-tier">
+                    <h3>@tier</h3>
+                    <ul>
+                        <li>Logo görünürlüğü</li>
+                        <li>Sosyal medya görünürlüğü</li>
+                        <li>Web sitesi görünürlüğü</li>
+                        <li>Organizasyon alanı görünürlüğü</li>
+                        <li>Haber ve medya içerikleri</li>
+                        <li>Özel marka aktivasyonu</li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="content-section section-muted">
+    <div class="container">
+        <div class="section-header">
+            <h2>Sponsorluk Dosyası Talep Et</h2>
+        </div>
+        @if (ViewBag.FormSuccess == true)
+        {
+            <div class="notice" style="max-width:720px;margin:0 auto 1.5rem;">Talebiniz alındı. Sponsorluk ekibimiz sizinle iletişime geçecektir.</div>
+        }
+        <form class="apply-form" method="post" asp-action="SponsorlukPost" style="max-width:720px;margin:0 auto;">
+            <div class="form-row">
+                <div class="form-group"><label for="company">Firma Adı</label><input type="text" id="company" name="company" required /></div>
+                <div class="form-group"><label for="contact">Yetkili Kişi</label><input type="text" id="contact" name="contact" required /></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" required /></div>
+                <div class="form-group"><label for="email">E-posta</label><input type="email" id="email" name="email" required /></div>
+            </div>
+            <div class="form-group">
+                <label for="sponsorType">İlgilenilen Sponsorluk Türü</label>
+                <select id="sponsorType" name="sponsorType">
+                    <option>Ana Sponsor</option>
+                    <option>Bölgesel Sponsor</option>
+                    <option>Forma Sponsoru</option>
+                    <option>Medya Sponsoru</option>
+                    <option>Diğer</option>
+                </select>
+            </div>
+            <div class="form-group"><label for="message">Mesaj</label><textarea id="message" name="message" rows="4"></textarea></div>
+            <button type="submit" class="btn btn-primary">Talep Gönder</button>
+        </form>
+    </div>
+</section>

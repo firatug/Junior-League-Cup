@@ -1,0 +1,101 @@
+@{
+    ViewData["Title"] = "Çerez Politikası";
+    ViewData["Description"] = "Junior League Cup çerez politikası — web sitesinde kullanılan çerezler ve tercih yönetimi.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>ÇEREZ POLİTİKASI</h1>
+        <p class="lead">Web sitemizde kullanılan çerezler ve yönetim seçenekleri hakkında bilgilendirme.</p>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Çerez Politikası</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container legal-content">
+        <p class="legal-updated">Son güncelleme: 23 Mayıs 2026</p>
+
+        <partial name="_LegalEntityInfo" />
+
+        <h2>1. Çerez Nedir?</h2>
+        <p>
+            Çerezler; ziyaret ettiğiniz internet siteleri tarafından tarayıcınıza veya cihazınıza kaydedilen küçük metin dosyalarıdır.
+            <strong>juniorleaguecup.com</strong> sitesinde, site işlevselliğini sağlamak, güvenliği artırmak ve kullanıcı deneyimini
+            iyileştirmek amacıyla çerezler kullanılmaktadır.
+        </p>
+
+        <h2>2. Çerezleri Kullanan Taraf</h2>
+        <p>
+            Bu web sitesi, Junior League Cup (JLC) organizasyonu kapsamında Zenit Event markası ile yönetilmektedir.
+            Zenit markası ATA Ventures markasıdır. Çerezler aracılığıyla toplanan verilerin veri sorumlusu
+            <strong>ATA VENTURES BİLGİSAYAR MEDYA SANAYİ VE TİCARET LİMİTED ŞİRKETİ</strong>’dir.
+            Kişisel verilerin işlenmesine ilişkin detaylar için <a asp-action="Kvkk">KVKK Aydınlatma Metni</a> sayfamızı inceleyebilirsiniz.
+        </p>
+
+        <h2>3. Kullanılan Çerez Türleri</h2>
+
+        <h3>3.1. Zorunlu Çerezler</h3>
+        <p>
+            Web sitesinin temel işlevlerinin çalışması için gereklidir. Oturum yönetimi, güvenlik ve form gönderimlerinin
+            doğrulanması bu çerezlerle sağlanır. Bu çerezler olmadan site düzgün çalışmayabilir.
+        </p>
+
+        <h3>3.2. İşlevsel Çerezler</h3>
+        <p>
+            Tercihlerinizi (dil, bölge vb.) hatırlamak ve site deneyiminizi kişiselleştirmek için kullanılır.
+        </p>
+
+        <h3>3.3. Performans ve Analitik Çerezler</h3>
+        <p>
+            Ziyaretçi sayısı, sayfa görüntüleme, trafik kaynakları ve site kullanım istatistiklerini anonim veya toplu
+            olarak analiz etmemize yardımcı olur. Bu veriler site performansını iyileştirmek amacıyla kullanılır.
+        </p>
+
+        <h3>3.4. Pazarlama Çerezleri (varsa)</h3>
+        <p>
+            İleride üçüncü taraf reklam veya sosyal medya entegrasyonları kullanılması halinde, ilgili platformların
+            çerezleri yalnızca açık rızanız ile devreye alınacaktır.
+        </p>
+
+        <h2>4. Çerezlerin Saklama Süresi</h2>
+        <p>
+            Oturum çerezleri tarayıcınızı kapattığınızda silinir. Kalıcı çerezler ise belirli bir süre (genellikle 1–12 ay)
+            cihazınızda kalabilir. Süre, çerezin türüne ve kullanım amacına göre değişiklik gösterebilir.
+        </p>
+
+        <h2>5. Çerez Tercihlerinizi Yönetme</h2>
+        <p>
+            Tarayıcı ayarlarınızdan çerezleri silebilir veya engelleyebilirsiniz. Çoğu tarayıcıda çerez yönetimi
+            “Gizlilik”, “Güvenlik” veya “Çerezler” bölümünden yapılabilir. Zorunlu çerezlerin devre dışı bırakılması
+            sitenin bazı özelliklerinin çalışmamasına neden olabilir.
+        </p>
+        <ul>
+            <li><strong>Chrome:</strong> Ayarlar → Gizlilik ve güvenlik → Çerezler</li>
+            <li><strong>Firefox:</strong> Ayarlar → Gizlilik ve Güvenlik</li>
+            <li><strong>Safari:</strong> Tercihler → Gizlilik</li>
+            <li><strong>Edge:</strong> Ayarlar → Çerezler ve site izinleri</li>
+        </ul>
+
+        <h2>6. Üçüncü Taraf Çerezleri</h2>
+        <p>
+            Sitemizde harici içerik (video, harita, sosyal medya vb.) kullanılması halinde ilgili üçüncü tarafların
+            kendi çerez politikaları geçerli olabilir. Bu platformların gizlilik politikalarını ayrıca incelemenizi öneririz.
+        </p>
+
+        <h2>7. İletişim</h2>
+        <p>
+            Çerez politikası hakkında sorularınız için Zenit Event iletişim kanallarını kullanabilirsiniz:
+            <a href="tel:+902423240354">0242 324 03 54</a> ·
+            <a href="mailto:info@juniorleaguecup.com">info@juniorleaguecup.com</a>
+        </p>
+
+        <div class="legal-related">
+            <h3>İlgili Metinler</h3>
+            <p>
+                <a asp-action="Kvkk">KVKK Aydınlatma Metni</a> ·
+                <a asp-action="KullanimSartlari">Kullanım Şartları</a> ·
+                <a asp-action="Iletisim">İletişim</a>
+            </p>
+        </div>
+    </div>
+</section>

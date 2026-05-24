@@ -72,8 +72,20 @@
             const target = document.querySelector(id);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const headerOffset = header ? header.offsetHeight + 20 : 100;
+                const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
     });
+
+    const timeline = document.getElementById('jlcTimeline');
+    if (timeline && 'IntersectionObserver' in window) {
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                timeline.classList.toggle('is-active', entry.isIntersecting);
+            });
+        }, { threshold: 0.35 });
+        timelineObserver.observe(timeline);
+    }
 })();

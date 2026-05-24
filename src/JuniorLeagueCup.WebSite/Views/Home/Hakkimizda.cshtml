@@ -1,90 +1,46 @@
 @{
     ViewData["Title"] = "Hakkımızda";
+    ViewData["Description"] = "Junior League Cup hakkında — Zenit Event ve Zenit Turizm çatısı altında yeni nesil çocuk futbol organizasyonu.";
 }
 
 <section class="page-hero">
     <div class="container">
         <h1>HAKKIMIZDA</h1>
+        <p class="lead">Zenit Event tarafından geliştirilen yeni nesil çocuk futbol organizasyonu.</p>
         <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Hakkımızda</p>
     </div>
 </section>
 
 <section class="content-section">
     <div class="container content-grid">
-        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1bd40?w=900&q=80');" role="img" aria-label="Çocuk futbolcular"></div>
+        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1bd40?w=900&q=80');" role="img" aria-label="Futbol organizasyonu"></div>
         <div class="content-text">
-            <span class="section-label">Hikayemiz</span>
-            <h2>7 Yaş Futboluna Adanmış Bir Organizasyon</h2>
+            <span class="section-label">Zenit Event</span>
+            <h2>Profesyonel Organizasyon Markası</h2>
             <p>
-                Junior League Cup, 2019 yılında İstanbul'da kuruldu. Amacımız, 7 yaş grubundaki çocuklara
-                profesyonel standartlarda, güvenli ve eğlenceli futbol turnuvaları sunmaktır.
-            </p>
-            <p>
-                Bugüne kadar 18'den fazla turnuva düzenledik, 1.400'ü aşkın genç futbolcuya sahne verdik
-                ve 12 şehirde kulüplerle iş birliği yaptık. Her etkinlikte fair play, centilmenlik ve
-                spor sevgisini ön planda tutuyoruz.
+                Junior League Cup, Zenit Turizm çatısı altında faaliyet gösteren Zenit Event tarafından geliştirilen yeni nesil çocuk futbol organizasyonudur.
+                Proje, spor organizasyonu, medya, turizm ve çocuk futbol gelişimini aynı çatı altında birleştirerek sürdürülebilir ve profesyonel bir organizasyon modeli oluşturmayı hedefler.
             </p>
             <ul class="check-list">
-                <li>TFF iş birliği protokolü ile uyumlu organizasyon</li>
-                <li>Çocuk psikolojisine uygun maç formatları (5v5, 20 dakika devre)</li>
-                <li>Veli ve antrenör geri bildirimleriyle sürekli gelişen sistem</li>
+                <li>Bölgesel seçmeler ve Antalya finali</li>
+                <li>Scout görünürlüğü ve medya gücü</li>
+                <li>Sponsorluk ve spor turizmi entegrasyonu</li>
+                <li>Uluslararası büyümeye uygun marka yapısı</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="content-section bg-alt">
-    <div class="container content-grid reverse">
-        <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=900&q=80');" role="img" aria-label="Futbol turnuvası"></div>
-        <div class="content-text">
-            <span class="section-label">Misyon & Vizyon</span>
-            <h2>Geleceğin Yıldızlarını Yetiştiriyoruz</h2>
-            <p><strong>Misyonumuz:</strong> Her çocuğun kaliteli futbol deneyimi yaşamasını sağlamak; ailelerin güvenle emanet edebileceği bir turnuva ortamı oluşturmak.</p>
-            <p><strong>Vizyonumuz:</strong> Türkiye'nin 7 yaş kategorisinde referans gösterilen turnuva markası olmak ve uluslararası dostluk turnuvalarına kapı açmak.</p>
-            <ul class="check-list">
-                <li>2027'de 25 şehirde turnuva hedefi</li>
-                <li>Online canlı skor ve istatistik platformu (yakında)</li>
-                <li>Antrenör eğitim seminerleri ve workshop'lar</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Ekibimiz</span>
-            <h2>Profesyonel Kadro</h2>
-            <p>Turnuvalarınızı deneyimli spor organizatörleri, lisanslı hakemler ve sağlık personeli yönetir.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-box">
-                <div class="feature-icon">👔</div>
-                <h3>Organizasyon Ekibi</h3>
-                <p>15 kişilik tam zamanlı ekip; kayıt, lojistik, sahne ve ödül töreni koordinasyonu.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">🩺</div>
-                <h3>Sağlık & Güvenlik</h3>
-                <p>Her turnuvada en az 2 sertifikalı sağlık görevlisi ve acil müdahale ekipmanı.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">⚽</div>
-                <h3>Teknik Kurul</h3>
-                <p>Eski profesyonel futbolcular ve çocuk antrenörlerinden oluşan danışma kurulu.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="content-section bg-alt">
+<section class="content-section section-muted">
     <div class="container">
         <div class="cta-banner">
             <div class="cta-bg" aria-hidden="true"></div>
+            <div class="cta-overlay" aria-hidden="true"></div>
             <div class="cta-content">
-                <h2>BİZİMLE İLETİŞİME GEÇİN</h2>
-                <p>Sponsorluk, iş birliği veya özel turnuva talepleriniz için ekibimiz hazır.</p>
-                <a asp-action="Iletisim" class="btn btn-accent">İletişim</a>
+                <h2>ROAD TO ANTALYA</h2>
+                <p>Türkiye'nin genç futbol yetenekleri için profesyonel organizasyon yolculuğu.</p>
+                <a asp-action="TakimBasvurusu" class="btn btn-gold">Takım Başvurusu</a>
+                <a asp-action="Sponsorluk" class="btn btn-outline">Sponsor Ol</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,62 @@
+@{
+    var placeholder = "....";
+    var score = "--";
+    var showLogo = ViewData["BracketShowLogo"] as bool? ?? false;
+    var finalLabel = ViewData["BracketFinalLabel"] as string ?? "Final Maçı";
+    var finalDate = ViewData["BracketFinalDate"] as string ?? "Tarih: Yakında";
+}
+
+<div class="tournament-bracket" aria-label="Turnuva eşleşmeleri — takımlar henüz belli değil">
+    <div class="bracket-tree bracket-tree--left">
+        <div class="bracket-round bracket-round--qf">
+            <div class="bracket-match">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+            <div class="bracket-match">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+        </div>
+        <div class="bracket-round bracket-round--sf">
+            <div class="bracket-match">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bracket-center">
+        <div class="bracket-final-box@(showLogo ? " bracket-final-box--logo" : "")">
+            @if (showLogo)
+            {
+                <img src="~/images/logo.png" class="bracket-final-logo" alt="Junior League Cup" asp-append-version="true" />
+            }
+            <span class="bracket-final-label">@finalLabel</span>
+            <div class="bracket-match bracket-match--final">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+            <span class="bracket-final-date">@finalDate</span>
+        </div>
+    </div>
+
+    <div class="bracket-tree bracket-tree--right">
+        <div class="bracket-round bracket-round--qf">
+            <div class="bracket-match">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+            <div class="bracket-match">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+        </div>
+        <div class="bracket-round bracket-round--sf">
+            <div class="bracket-match">
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+                <div class="bracket-team"><span class="bracket-team-badge"></span><span class="bracket-team-name">@placeholder</span><span class="bracket-team-score">@score</span></div>
+            </div>
+        </div>
+    </div>
+</div>

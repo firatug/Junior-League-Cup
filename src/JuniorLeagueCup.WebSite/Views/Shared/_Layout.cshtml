@@ -1,13 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Junior League Cup — 7 yaş futbol takımları için profesyonel turnuva organizasyonu." />
-    <title>@ViewData["Title"] | Junior League Cup</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta name="description" content="@(ViewData["Description"] ?? "Junior League Cup — Türkiye genelinde 7-8 yaş futbol takımları için bölgesel seçmeler ve Antalya final organizasyonu. Road to Antalya.")" />
+    <meta property="og:title" content="@(ViewData["Title"] ?? "Ana Sayfa") | Junior League Cup" />
+    <meta property="og:description" content="@(ViewData["Description"] ?? "Road to Antalya — Geleceğin oyuncuları burada başlar.")" />
+    <meta property="og:type" content="website" />
+    <title>@(ViewData["Title"] ?? "Ana Sayfa") | Junior League Cup</title>
+    <link rel="icon" type="image/png" href="~/images/logo.png" asp-append-version="true" />
+    <link rel="apple-touch-icon" href="~/images/logo.png" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
@@ -17,12 +19,8 @@
 
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
-            <a class="brand" asp-controller="Home" asp-action="Index">
-                <span class="brand-icon" aria-hidden="true">⚽</span>
-                <span class="brand-text">
-                    <strong>Junior League</strong>
-                    <small>Cup</small>
-                </span>
+            <a class="brand" asp-controller="Home" asp-action="Index" aria-label="Junior League Cup — Ana Sayfa">
+                <partial name="_BrandLogo" />
             </a>
 
             <button class="nav-toggle" id="navToggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false">
@@ -34,11 +32,18 @@
                     var action = ViewContext.RouteData.Values["action"]?.ToString();
                 }
                 <a asp-action="Index" class="nav-link @(action == "Index" ? "active" : "")">Ana Sayfa</a>
+                <a asp-action="JlcNedir" class="nav-link @(action == "JlcNedir" ? "active" : "")">JLC Nedir?</a>
+                <a asp-action="BolgeselSecmeler" class="nav-link @(action == "BolgeselSecmeler" ? "active" : "")">Bölgesel Seçmeler</a>
+                <a asp-action="AntalyaFinali" class="nav-link @(action == "AntalyaFinali" ? "active" : "")">Antalya Finali</a>
+                <a asp-action="Medya" class="nav-link @(action == "Medya" ? "active" : "")">Medya</a>
                 <a asp-action="Hakkimizda" class="nav-link @(action == "Hakkimizda" ? "active" : "")">Hakkımızda</a>
-                <a asp-action="Turnuvalar" class="nav-link @(action == "Turnuvalar" ? "active" : "")">Turnuvalar</a>
-                <a asp-action="KatilimGereklilikleri" class="nav-link @(action == "KatilimGereklilikleri" ? "active" : "")">Katılım Gereklilikleri</a>
-                <a asp-action="Iletisim" class="nav-link @(action == "Iletisim" ? "active" : "")">İletişim</a>
-                <a asp-action="Turnuvalar" class="btn btn-primary btn-sm nav-cta">Takım Kaydı</a>
+                <div class="nav-actions">
+                    <a asp-action="TakimBasvurusu" class="btn btn-primary btn-sm nav-cta">Takım Başvurusu</a>
+                    <a asp-action="CanliSkor" class="live-link @(action == "CanliSkor" ? "active" : "")" aria-label="Canlı skor ve fikstür">
+                        <span class="live-dot" aria-hidden="true"></span>
+                        LIVE
+                    </a>
+                </div>
             </nav>
         </div>
     </header>
@@ -51,51 +56,56 @@
         <div class="footer-top">
             <div class="container footer-grid">
                 <div class="footer-brand-col">
-                    <a class="brand brand-footer" asp-controller="Home" asp-action="Index">
-                        <span class="brand-icon" aria-hidden="true">⚽</span>
-                        <span class="brand-text">
-                            <strong>Junior League</strong>
-                            <small>Cup</small>
-                        </span>
+                    <a class="brand brand--footer" asp-controller="Home" asp-action="Index" aria-label="Junior League Cup — Ana Sayfa">
+                        <partial name="_BrandLogo" view-data="@(new ViewDataDictionary(ViewData) { { "BrandContext", "footer" } })" />
                     </a>
-                    <p>7 yaş kategorisinde güvenli, adil ve unutulmaz futbol turnuvaları düzenliyoruz. Her çocuk sahada parlasın.</p>
+                    <p class="footer-zenit">Zenit Event — Zenit Turizm</p>
+                    <p>Türkiye'nin genç futbol yetenekleri için bölgesel seçmelerden Antalya finaline uzanan profesyonel organizasyon markası.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Instagram">IG</a>
                         <a href="#" aria-label="Facebook">FB</a>
                         <a href="#" aria-label="YouTube">YT</a>
+                        <a href="#" aria-label="LinkedIn">IN</a>
                     </div>
                 </div>
                 <div>
-                    <h4>Hızlı Bağlantılar</h4>
+                    <h4>Organizasyon</h4>
                     <ul class="footer-links">
-                        <li><a asp-action="Hakkimizda">Hakkımızda</a></li>
-                        <li><a asp-action="Turnuvalar">Turnuvalar</a></li>
-                        <li><a asp-action="KatilimGereklilikleri">Katılım Gereklilikleri</a></li>
-                        <li><a asp-action="Iletisim">İletişim</a></li>
+                        <li><a asp-action="JlcNedir">JLC Nedir?</a></li>
+                        <li><a asp-action="BolgeselSecmeler">Bölgesel Seçmeler</a></li>
+                        <li><a asp-action="AntalyaFinali">Antalya Finali</a></li>
+                        <li><a asp-action="ProgramFikstur">Program / Fikstür</a></li>
+                        <li><a asp-action="Takimlar">Takımlar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Katılım</h4>
+                    <ul class="footer-links">
+                        <li><a asp-action="TakimBasvurusu">Takım Başvurusu</a></li>
+                        <li><a asp-action="VeliOyuncuDeneyimi">Veli & Oyuncu Deneyimi</a></li>
+                        <li><a asp-action="ScoutSistemi">Scout Sistemi</a></li>
+                        <li><a asp-action="Sponsorluk">Sponsorluk</a></li>
+                        <li><a asp-action="Oteller">Otel & Konaklama</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>İletişim</h4>
                     <ul class="footer-contact">
-                        <li>📍 İstanbul, Türkiye</li>
-                        <li>📞 +90 (212) 555 07 07</li>
-                        <li>✉️ info@juniorleaguecup.com</li>
+                        <li>Antalya & İstanbul, Türkiye</li>
+                        <li>info@juniorleaguecup.com</li>
+                        <li><a asp-action="Iletisim">İletişim Formu</a></li>
                     </ul>
-                </div>
-                <div>
-                    <h4>Bülten</h4>
-                    <p>Turnuva duyurularından haberdar olun.</p>
-                    <form class="newsletter-form" onsubmit="return false;">
-                        <input type="email" placeholder="E-posta adresiniz" aria-label="E-posta" />
-                        <button type="submit" class="btn btn-accent">Abone Ol</button>
-                    </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container footer-bottom-inner">
-                <span>&copy; @DateTime.Now.Year Junior League Cup. Tüm hakları saklıdır.</span>
-                <span>7 Yaş Futbol Turnuvaları</span>
+                <span>&copy; @DateTime.Now.Year Junior League Cup — Zenit Event. Tüm hakları saklıdır.</span>
+                <div class="footer-legal">
+                    <a asp-action="Kvkk">KVKK</a>
+                    <a asp-action="CerezPolitikasi">Çerez Politikası</a>
+                    <a asp-action="KullanimSartlari">Kullanım Şartları</a>
+                </div>
             </div>
         </div>
     </footer>

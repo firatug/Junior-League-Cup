@@ -1,0 +1,9 @@
+@{
+    var context = ViewData["BrandContext"] as string ?? "header";
+}
+<img src="~/images/logo.png"
+     alt="Junior League Cup — Zenit Event"
+     class="brand-logo brand-logo--@context"
+     width="1024"
+     height="610"
+     asp-append-version="true" />

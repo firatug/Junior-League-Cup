@@ -1,0 +1,87 @@
+@{
+    ViewData["Title"] = "Takım ve Kulüp Başvurusu";
+    ViewData["Description"] = "Junior League Cup takım başvuru formu — futbol okulları ve kulüpler için bölgesel seçme ön kaydı.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>TAKIM BAŞVURUSU</h1>
+        <p class="lead">Futbol okulları ve kulüpler başvuru formunu doldurarak bölgesel seçmeler için ön kayıt oluşturabilir.</p>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Takım Başvurusu</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        @if (ViewBag.FormSuccess == true)
+        {
+            <div class="notice" style="margin-bottom:1.5rem;">Başvurunuz alındı. En kısa sürede sizinle iletişime geçeceğiz.</div>
+        }
+        <form class="apply-form" method="post" asp-action="TakimBasvurusuPost">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clubName">Kulüp / Futbol Okulu Adı</label>
+                    <input type="text" id="clubName" name="clubName" required />
+                </div>
+                <div class="form-group">
+                    <label for="contactName">Yetkili Kişi Adı</label>
+                    <input type="text" id="contactName" name="contactName" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city">Şehir</label>
+                    <select id="city" name="city" required>
+                        <option value="">Seçiniz</option>
+                        <option>İstanbul</option>
+                        <option>Ankara</option>
+                        <option>İzmir</option>
+                        <option>Bursa</option>
+                        <option>Adana</option>
+                        <option>Antalya</option>
+                        <option>Diğer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ageGroup">Takım Yaş Grubu</label>
+                    <select id="ageGroup" name="ageGroup" required>
+                        <option value="">Seçiniz</option>
+                        <option>7 Yaş</option>
+                        <option>8 Yaş</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="playerCount">Oyuncu Sayısı</label>
+                <input type="number" id="playerCount" name="playerCount" min="8" max="20" />
+            </div>
+            <div class="form-group">
+                <label for="pastEvents">Daha Önce Katıldığı Organizasyonlar</label>
+                <textarea id="pastEvents" name="pastEvents" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notlar</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="kvkk" name="kvkk" required />
+                <label for="kvkk"><a asp-action="Kvkk" target="_blank">KVKK aydınlatma metnini</a> okudum ve kişisel verilerimin işlenmesini onaylıyorum.</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="cerez" name="cerez" required />
+                <label for="cerez"><a asp-action="CerezPolitikasi" target="_blank">Çerez politikasını</a> okudum ve kabul ediyorum.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Başvuruyu Gönder</button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Otel & Konaklama";
+    ViewData["Description"] = "Junior League Cup Antalya otel ve konaklama — Kundu, Lara, Side, Belek partner otelleri.";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>OTEL & KONAKLAMA</h1>
+        <p class="lead">Antalya'da futbol ve tatil deneyimi — aileler ve takımlar için konaklama paketleri.</p>
+        <p class="breadcrumb"><a asp-action="Index">Ana Sayfa</a> / Oteller</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <p style="max-width:720px;margin:0 auto 2.5rem;text-align:center;color:var(--text-muted);">
+            JLC Antalya final organizasyonu, futbol heyecanını Antalya'nın turizm gücüyle birleştirir.
+            Aileler ve takımlar için konaklama, transfer ve organizasyon paketleri oluşturulabilir.
+        </p>
+        <div class="hotel-grid">
+            @foreach (var hotel in new[] {
+                new { Name = "Kremlin Palace", Region = "Kundu", Info = "Partner otel — konaklama ve transfer." },
+                new { Name = "Limak Lara", Region = "Lara", Info = "Organizasyon konaklama partneri." },
+                new { Name = "Fame Lara", Region = "Lara", Info = "Aile ve takım konaklama." },
+                new { Name = "Selectum Noa", Region = "Side", Info = "Partner otel — detaylar yakında." },
+                new { Name = "Hane Otel Group", Region = "Belek", Info = "Partnerlik görüşmeleri devam ediyor." },
+                new { Name = "Süral Otel Group", Region = "Antalya Merkez", Info = "Organizasyon partneri." },
+                new { Name = "Emirhan Hotels", Region = "Lara", Info = "Konaklama paketi seçenekleri." }
+            })
+            {
+                <div class="hotel-card">
+                    <h3>@hotel.Name</h3>
+                    <p class="region">@hotel.Region</p>
+                    <p>@hotel.Info</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm" style="margin-top:1rem;">Detay</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
